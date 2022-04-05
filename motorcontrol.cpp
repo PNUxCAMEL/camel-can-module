@@ -12,8 +12,14 @@
 #include <stdlib.h>
 
 // author@ Jaehyeong Park
+/*
+    TODO: 1. hex2rad, hex2rad/sec
+          2. position limit 
+          3. pd control loop
+          4. command class
+          5. EMC switch
+*/
 
-// #define CAN_ID 0x141
 #define CAN_MAX_LEN 8
 
 using namespace std;
@@ -105,51 +111,6 @@ int canread(const int sock)
 
     return 0;
 }
-int canrecv(const int sock)
-{
-    struct sockaddr_can addr;
-    struct ifreq ifr;
-    socklen_t len = sizeof(addr);
-    struct can_frame frame;
-int nbytes = recvfrom(sock, &frame, sizeof(struct can_frame),0, (struct sockaddr*)&addr, &len);
-
-    return 0;
-}
-
-int cansend2(const int sock, const u_int32_t id, const u_int8_t *data, const size_t data_len)
-{
-    //frame 설정
-    struct can_frame frame;
-    //can_frame frame;
-    u_int32_t tempid = id;
-    const u_int8_t *recvdata;
-    tempid = id & 0x1fffffff;
-    // tempid |= (1<<31); 이부분 삭제 되어야함
-    frame.can_id = tempid;
-    memcpy(frame.data, data, data_len);
-    frame.can_dlc = data_len; 
-
-    
-    //전송
-    int tx_bytes = write(sock, &frame, sizeof(frame));
-    //canrecv(sock);
-    if(tx_bytes == -1){
-        perror("Fail to transmit can frame -");
-        return -1;
-    }
-    cout << "success to transmit can frame " << tx_bytes << "is transmited" << endl;
-    return 0;
-}
-
-
-
-/*
-    TODO: 1. hex2rad, hex2rad/sec
-          2. position limit 
-          3. pd control loop
-          4. command class
-          5. EMC switch
-*/
 
 int main()
 {
@@ -167,8 +128,6 @@ int main()
     u_int8_t can_data1[CAN_MAX_LEN] = { 0X88, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00 };
     cansend(sock, MOTOR_ID, can_data1, sizeof(can_data1));
     canread(sock);
-    //canread(sock);
-    // usleep(500);
     sleep(5);   // run 코드 넣고 쉬어주면 코드 잘 돌아감!
     // ======= init ======= //
     
@@ -190,9 +149,9 @@ int main()
     sleep(5);
     u_int8_t can_data3[CAN_MAX_LEN] = { 0X80, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00 };
     cansend(sock, MOTOR_ID, can_data3, sizeof(can_data3));
-    // 엔코더 값 받기 (), 전류 값 받기,  
     sleep(2);
     
+
     /*
 
     read PID data command (0x30)
