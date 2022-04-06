@@ -11,7 +11,11 @@ int main()
     mt.turnOnMotor();
     sleep(5);
 
-    mt.setTorque(0XFF);
+    mt.setVelocity(0XFF);
+    sleep(2);
+    mt.stopMotor();
+    sleep(2);
+    mt.setVelocity(0xFF);
 
     std::cout<<"get encoder hex value"<<std::endl;
 

@@ -25,7 +25,7 @@
 class motorcontrol {
 public:
     motorcontrol(char* canName, u_int32_t motorId, std::string canName_temp, std::string bitRate){
-        std::string command3= "sudo ip link set "+canName_temp+"up type can bitrate" + bitRate; // TODO: should be modified.
+        std::string command3= "sudo ip link set "+canName_temp+" up type can bitrate " + bitRate; // TODO: should be modified.
         const char *c3 = command3.c_str();
         system(c3);
         initCanInterface(canName);
@@ -33,12 +33,14 @@ public:
     }
 
     void initCanInterface(const char *CanName);
+    void stopMotor();
     void turnOnMotor();
     void turnOffMotor();
     void canSend(const u_int8_t *data);
     void canRead();
     void getEncoder();
     void setTorque(int Torque);
+    void setVelocity(int Velocity);
     int getSock(){return mSock;}
     can_frame getFrame(){return mFrame;}
 
@@ -51,6 +53,7 @@ private:
     u_int32_t mCanID;
 };
 
+//socket 생성
 void motorcontrol::initCanInterface(const char *ifname)
 {
     //CAN socket 생성
@@ -85,18 +88,7 @@ void motorcontrol::initCanInterface(const char *ifname)
     printf("Success to bind can socket\n");
 }
 
-void motorcontrol::turnOnMotor()
-{
-    u_int8_t motorON_data[8] = { 0x88, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00 };
-    canSend(motorON_data);
-}
-
-void motorcontrol::turnOffMotor()
-{
-    u_int8_t motorON_data[8] = { 0x80, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00 };
-    canSend(motorON_data);
-}
-
+// Data 보내기
 void motorcontrol::canSend(const u_int8_t *data) // TODO : motorId should be specified.
 {
     u_int32_t tempid = mMotorID & 0x1fffffff;
@@ -116,6 +108,7 @@ void motorcontrol::canSend(const u_int8_t *data) // TODO : motorId should be spe
     mSendedCommand = mFrame.data[0];
 }
 
+// Data 읽기
 void motorcontrol::canRead()
 {
     int rx_bytes = read(mSock, &mFrame, sizeof(mFrame));
@@ -128,32 +121,41 @@ void motorcontrol::canRead()
     printf("%d %d %d %d %d %d %d %d \n",mFrame.data[0],mFrame.data[1],mFrame.data[2],mFrame.data[3],mFrame.data[4],mFrame.data[5],mFrame.data[6],mFrame.data[7] );
 }
 
-/*
 
-    read PID data command (0x30)
-    reply DATA[2] = anglePidKp
-    reply DATA[3] = anglePidKi
-    reply DATA[4] = speedPidKp
-    reply DATA[5] = speedPidKi
-    reply DATA[6] = iqPidKp
-    reply DATA[7] = iqPidKi
-    */
-   
 
-    
-    //Write PID to RAM command (0x31)
-    
-    
-    //Write PID to ROM command (0x32)
-    
-    
-    //Read acceleration data command (0x33)
-    
-    
-    //Write acceleration data to RAM command (0x34)
-    
-    
-    //Read encoder data command (0x90)
+
+
+
+
+
+
+// 1. Read Position loop KP data command (0x30)
+// 2. Read Position lop Ki data command (0x31)
+// 3. Read Speed loop KP data command (0x32)
+// 4. Read Speed loop Ki data command (0x33)
+// 5. Read Current loop KP data command (0x34)
+// 6. Read Current loop Ki data command (0x35)
+// 7. Write Position loop KP data to RAM command (0x36)
+// 8. Write Position loop Ki data to RAM command (0x37)
+// 9. Write Speed loop KP data to RAM command (0x38)
+// 10. Write Speed loop Ki data to RAM command (0x39)
+// 11. Write Current loop KP data to RAM command (0x3A)
+// 12. Write Current loop Ki data to RAM command (0x3B)
+// 13. Write Position loop KP data to ROM command (0x3C)
+// 14. Write Position loop Ki data to ROM command (0x3D)
+// 15. Write Speed loop KP data to ROM command (0x3E)
+// 16. Write Speed loop Ki data to ROM command (0x3F)
+// 17. Write Current loop KP data to ROM command (0x40)
+// 18. Write Current loop Ki data to ROM command (0x41)
+// 19. Read acceleration data command (0x42)
+// 20. Write acceleration data to RAM command (0x43)
+// 21. Read multiturn encoder position command (0x60)
+// 22. Read multiturn encoder original position command (0x61)
+// 23. Read multiturn encoder offset command (0x62)
+// 24. Write multiturn encoder values to ROM as motor zero command (0x63)
+// 25. Write multiturn encoder current position to ROM as motor zero command (0x64)
+
+// 26. Read encoder data command (0x90)
 void motorcontrol::getEncoder()
 {
     /* 
@@ -162,43 +164,46 @@ void motorcontrol::getEncoder()
     u_int8_t requestEncoder[8] = { 0X90, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00 };
     canSend(requestEncoder);
     canRead();
+    /*
+    reply DATA[2] = Encoder position low byte
+    reply DATA[3] = Encoder position high byte
+    reply DATA[4] = Encoder original position low byte
+    reply DATA[5] = Encoder original position high byte
+    reply DATA[6] = Encoder offset low byte
+    reply DATA[7] = Encoder offset high byte
+    */
+} 
+
+// 27. Write encoder values to ROM as motor zero command (0x91)
+// 28. Write current position to ROM as motor zero command (0x19)
+// 29. Read multiturn turns angle command (0x92)
+// 30. Read single circle ange command (0x94)
+// 31. Read motor status 1 and error flag commands (0x9A)
+// 32. Read motor status 2 (0x9C)
+// 33. Read motor status 3 (0x9D)
+
+// 34. Motor off command (0x80)
+void motorcontrol::turnOffMotor()
+{
+    u_int8_t motorON_data[8] = { 0x80, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00 };
+    canSend(motorON_data);
 }
 
-    //Write encoder offset command (0x91)
+// 35. Motor stop command (0x81)
+void motorcontrol::stopMotor()
+{
+    u_int8_t motorStop_data[8] = { 0x81, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00 };
+    canSend(motorStop_data);
+}
 
+// 36. Motor running command (0x88)
+void motorcontrol::turnOnMotor()
+{
+    u_int8_t motorON_data[8] = { 0x88, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00 };
+    canSend(motorON_data);
+}
 
-    //Write current position to ROM as motor zero command (0x19)
-
-
-    //Read multi turns angle command (0x92)
-
-
-    //Read single circle angle command (0x94)
-
-
-    //Read motor status 1 and error flag commands (0x9A)
-
-
-    //Clear motor error flag command (0x9B)
-
-
-    //Read motor status 2 (0x9C)
-
-
-    //Read motor status 3 (0x9D)
-
-
-    //Motor off command (0x80)
-
-
-    //Motor stop command (0x81)
-
-
-    //Motor running command (0x88)
-
-
-
-    //Torque closed-loop command (0xA1)
+// 37. Torque closed-loop command (0xA1)
 void motorcontrol::setTorque(int Torque)
 {
     /* 
@@ -219,18 +224,35 @@ void motorcontrol::setTorque(int Torque)
     // printf("%d %d %d %d %d %d %d %d \n",mFrame.data[0],mFrame.data[1],mFrame.data[2],mFrame.data[3],mFrame.data[4],mFrame.data[5],mFrame.data[6],mFrame.data[7] );
 }
 
-    //Speed closed-loop command(0xA2)
+// 38. Speed closed-loop command (0xA2)
+void motorcontrol::setVelocity(int Velocity)
+{
+    //0.01dps/LSB
+    u_int8_t velocity_data[8] = { 0Xa2, 0X00, 0X00, 0X00, 0x00, Velocity, 0X00, 0X00 };
+    int iteration = 0;
+    canSend(velocity_data);
+    int rx_bytes = read(mSock, &mFrame, sizeof(mFrame));
+    //feedback msg
+    while(mFrame.data[0] != 0Xa2)
+    {
+        rx_bytes = read(mSock, &mFrame, sizeof(mFrame));
+    }
+    // printf("%d %d %d %d %d %d %d %d \n",mFrame.data[0],mFrame.data[1],mFrame.data[2],mFrame.data[3],mFrame.data[4],mFrame.data[5],mFrame.data[6],mFrame.data[7] );
 
+}
 
-    // Position closed-loop command1 (0xA3)
-
-
-    // Position closed-loop command2 (0xA4)
-
-
-    // Position closed-loop command3 (0xA5)
-
-
-    // Position closed-loop command4 (0xA6)
-
+// 39. Position closed-loop command 1 (0xA3)
+// 40. Position closed-loop command 2 (0xA4)
+// 41. Position closed-loop command 3 (0xA5)
+// 42. Position closed-loop command 4 (0xA6)
+// 43. Multiturn incremental position control command (0xA7)
+// 44. Multiturn incremental position control command (0xA8)
+// 45. read running mode (0x70)
+// 46. read power value (0x71)
+// 47. read Battery voltage (0x72)
+// 48. TF command (0x73)
+// 49. System reset command (0x76)
+// 50. Brake opening command (0x77)
+// 51. Brake close command (0x78)
+// 52. CAN ID setting and reading (0x79)
 
