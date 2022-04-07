@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = /home/jaehoon/git/repository-group/camel-can-module/build
 
 # The main recursive "all" target.
 all: CMakeFiles/test_motor_x8_pro.dir/all
+all: CMakeFiles/test_basic_cpp.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -72,6 +73,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/test_motor_x8_pro.dir/clean
+clean: CMakeFiles/test_basic_cpp.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -81,7 +83,7 @@ clean: CMakeFiles/test_motor_x8_pro.dir/clean
 CMakeFiles/test_motor_x8_pro.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_motor_x8_pro.dir/build.make CMakeFiles/test_motor_x8_pro.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_motor_x8_pro.dir/build.make CMakeFiles/test_motor_x8_pro.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jaehoon/git/repository-group/camel-can-module/build/CMakeFiles --progress-num=1,2 "Built target test_motor_x8_pro"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jaehoon/git/repository-group/camel-can-module/build/CMakeFiles --progress-num=3,4 "Built target test_motor_x8_pro"
 .PHONY : CMakeFiles/test_motor_x8_pro.dir/all
 
 # Build rule for subdir invocation for target.
@@ -99,6 +101,32 @@ test_motor_x8_pro: CMakeFiles/test_motor_x8_pro.dir/rule
 CMakeFiles/test_motor_x8_pro.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_motor_x8_pro.dir/build.make CMakeFiles/test_motor_x8_pro.dir/clean
 .PHONY : CMakeFiles/test_motor_x8_pro.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_basic_cpp.dir
+
+# All Build rule for target.
+CMakeFiles/test_basic_cpp.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_basic_cpp.dir/build.make CMakeFiles/test_basic_cpp.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_basic_cpp.dir/build.make CMakeFiles/test_basic_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jaehoon/git/repository-group/camel-can-module/build/CMakeFiles --progress-num=1,2 "Built target test_basic_cpp"
+.PHONY : CMakeFiles/test_basic_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_basic_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jaehoon/git/repository-group/camel-can-module/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_basic_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jaehoon/git/repository-group/camel-can-module/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_basic_cpp.dir/rule
+
+# Convenience name for target.
+test_basic_cpp: CMakeFiles/test_basic_cpp.dir/rule
+.PHONY : test_basic_cpp
+
+# clean rule for target.
+CMakeFiles/test_basic_cpp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_basic_cpp.dir/build.make CMakeFiles/test_basic_cpp.dir/clean
+.PHONY : CMakeFiles/test_basic_cpp.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

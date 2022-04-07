@@ -11,6 +11,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <sstream>
+#include <cmath>
 
 // author@ Jaehyeong Park
 /*
@@ -46,9 +47,13 @@ public:
 
     void getEncoder(int motorID);
 
+    void getMultiturnAngle(int motorID);
+
     void setTorque(int Torque, int motorID);
 
     void setVelocity(int Velocity, int motorID);
+
+    void setPosition1(int motorID, double position);
 
     int getSock() { return mSock; }
 
@@ -59,6 +64,7 @@ private:
     const char *mCanName;
     int mSock;
     int mSendedCommand;
+    int mGearRatio = 9;
     u_int32_t mCanID;
 };
 
@@ -124,8 +130,6 @@ void motorcontrol::canRead() {
     while (mFrame.data[0] != mSendedCommand) {
         rx_bytes = read(mSock, &mFrame, sizeof(mFrame));
     }
-    printf("%d %d %d %d %d %d %d %d \n", mFrame.data[0], mFrame.data[1], mFrame.data[2], mFrame.data[3], mFrame.data[4],
-           mFrame.data[5], mFrame.data[6], mFrame.data[7]);
 }
 
 
@@ -170,6 +174,8 @@ void motorcontrol::getEncoder(int motorID) {
     u_int8_t requestEncoder[8] = {0X90, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(requestEncoder, motorID);
     canRead();
+    printf("%d %d %d %d %d %d %d %d \n", mFrame.data[0], mFrame.data[1], mFrame.data[2], mFrame.data[3], mFrame.data[4],
+           mFrame.data[5], mFrame.data[6], mFrame.data[7]);
     /*
     reply DATA[2] = Encoder position low byte
     reply DATA[3] = Encoder position high byte
@@ -183,6 +189,25 @@ void motorcontrol::getEncoder(int motorID) {
 // 27. Write encoder values to ROM as motor zero command (0x91)
 // 28. Write current position to ROM as motor zero command (0x19)
 // 29. Read multiturn turns angle command (0x92)
+void motorcontrol::getMultiturnAngle(int motorID) {
+    /*
+    1. encoder data 처리 필요
+    */
+    u_int8_t requestEncoder[8] = {0X92, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
+    canSend(requestEncoder, motorID);
+    canRead();
+    float degree = (mFrame.data[1] + mFrame.data[2] * 256.0 + mFrame.data[3] * 256.0 * 256.0 +
+                    mFrame.data[4] * 256.0 * 256.0 * 256.0 +
+                    mFrame.data[5] * 256.0 * 256.0 * 256.0 * 256.0 +
+                    mFrame.data[6] * 256.0 * 256.0 * 256.0 * 256.0 * 256.0) * 0.01 / mGearRatio;
+    if (mFrame.data[7] == 1) {
+        degree = -1.0 * degree;
+    }
+
+    printf("%f \n", degree);
+
+}
+
 // 30. Read single circle ange command (0x94)
 // 31. Read motor status 1 and error flag commands (0x9A)
 // 32. Read motor status 2 (0x9C)
@@ -207,13 +232,13 @@ void motorcontrol::turnOnMotor(int motorID) {
 }
 
 // 37. Torque closed-loop command (0xA1)
-void motorcontrol::setTorque(int motorID, int Torque) {
+void motorcontrol::setTorque(int motorID, int torque) {
+
     /* 
     1. 따로 데이터 변환 해줄 필요 있음
     2. 모터 회전 방향 지정해줘야함
     */
-
-    u_int8_t torque_data[8] = {0Xa1, 0X00, 0X00, 0X00, Torque, 0X00, 0X00, 0X00};
+    u_int8_t torque_data[8] = {0Xa1, 0X00, 0X00, 0X00, torque, 0X00, 0X00, 0X00};
     int iteration = 0;
     canSend(torque_data, motorID);
     int rx_bytes = read(mSock, &mFrame, sizeof(mFrame));
@@ -221,15 +246,40 @@ void motorcontrol::setTorque(int motorID, int Torque) {
 }
 
 // 38. Speed closed-loop command (0xA2)
-void motorcontrol::setVelocity(int motorID, int Velocity) {
+void motorcontrol::setVelocity(int motorID, int velocity) {
     //0.01dps/LSB
-    u_int8_t velocity_data[8] = {0Xa2, 0X00, 0X00, 0X00, 0x00, Velocity, 0X00, 0X00};
+    u_int8_t velocity_data[8] = {0Xa2, 0X00, 0X00, 0X00, 0x00, velocity, 0X00, 0X00};
     int iteration = 0;
     canSend(velocity_data, motorID);
     canRead();
 }
 
 // 39. Position closed-loop command 1 (0xA3)
+void motorcontrol::setPosition1(int motorID, double desiredPosition_rad) {
+    //0.01rad/LSB
+    double rad2deg = 180 / 3.141592;
+    double position_Deg = desiredPosition_rad * rad2deg * 100 * mGearRatio;
+    int position_int = (int) round(position_Deg);
+
+    u_int8_t pos_0;
+    u_int8_t pos_1;
+    u_int8_t pos_2;
+    u_int8_t pos_3;
+
+    int temp = position_int;
+    pos_0 = temp % 256;
+    temp = temp / 256;
+    pos_1 = temp % 256;
+    temp = temp / 256;
+    pos_2 = temp % 256;
+    temp = temp / 256;
+    pos_3 = temp % 256;
+
+    u_int8_t velocity_data[8] = {0Xa3, 0X00, 0X00, 0X00, pos_0, pos_1, pos_2, pos_3};
+    int iteration = 0;
+    canSend(velocity_data, motorID);
+    canRead();
+}
 // 40. Position closed-loop command 2 (0xA4)
 // 41. Position closed-loop command 3 (0xA5)
 // 42. Position closed-loop command 4 (0xA6)

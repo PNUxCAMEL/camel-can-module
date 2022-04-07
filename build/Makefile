@@ -129,6 +129,43 @@ test_motor_x8_pro/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_motor_x8_pro.dir/build.make CMakeFiles/test_motor_x8_pro.dir/build
 .PHONY : test_motor_x8_pro/fast
 
+#=============================================================================
+# Target rules for targets named test_basic_cpp
+
+# Build rule for target.
+test_basic_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_basic_cpp
+.PHONY : test_basic_cpp
+
+# fast build rule for target.
+test_basic_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_basic_cpp.dir/build.make CMakeFiles/test_basic_cpp.dir/build
+.PHONY : test_basic_cpp/fast
+
+test_basic.o: test_basic.cpp.o
+.PHONY : test_basic.o
+
+# target to build an object file
+test_basic.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_basic_cpp.dir/build.make CMakeFiles/test_basic_cpp.dir/test_basic.cpp.o
+.PHONY : test_basic.cpp.o
+
+test_basic.i: test_basic.cpp.i
+.PHONY : test_basic.i
+
+# target to preprocess a source file
+test_basic.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_basic_cpp.dir/build.make CMakeFiles/test_basic_cpp.dir/test_basic.cpp.i
+.PHONY : test_basic.cpp.i
+
+test_basic.s: test_basic.cpp.s
+.PHONY : test_basic.s
+
+# target to generate assembly for a file
+test_basic.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_basic_cpp.dir/build.make CMakeFiles/test_basic_cpp.dir/test_basic.cpp.s
+.PHONY : test_basic.cpp.s
+
 test_motor.o: test_motor.cpp.o
 .PHONY : test_motor.o
 
@@ -161,7 +198,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test_basic_cpp"
 	@echo "... test_motor_x8_pro"
+	@echo "... test_basic.o"
+	@echo "... test_basic.i"
+	@echo "... test_basic.s"
 	@echo "... test_motor.o"
 	@echo "... test_motor.i"
 	@echo "... test_motor.s"

@@ -52,6 +52,37 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
+# =============================================================================
+# Object build statements for EXECUTABLE target test_basic_cpp
+
+
+#############################################
+# Order-only phony target for test_basic_cpp
+
+build cmake_object_order_depends_target_test_basic_cpp: phony || CMakeFiles/test_basic_cpp.dir
+
+build CMakeFiles/test_basic_cpp.dir/test_basic.cpp.o: CXX_COMPILER__test_basic_cpp_Debug /home/jaehoon/git/repository-group/camel-can-module/test_basic.cpp || cmake_object_order_depends_target_test_basic_cpp
+  DEP_FILE = CMakeFiles/test_basic_cpp.dir/test_basic.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/test_basic_cpp.dir
+  OBJECT_FILE_DIR = CMakeFiles/test_basic_cpp.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test_basic_cpp
+
+
+#############################################
+# Link the executable test_basic_cpp
+
+build test_basic_cpp: CXX_EXECUTABLE_LINKER__test_basic_cpp_Debug CMakeFiles/test_basic_cpp.dir/test_basic.cpp.o
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/test_basic_cpp.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = test_basic_cpp
+  TARGET_PDB = test_basic_cpp.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -105,7 +136,7 @@ build test_motor_x8_pro: CXX_EXECUTABLE_LINKER__test_motor_x8_pro_Debug CMakeFil
 #############################################
 # Folder: /home/jaehoon/git/repository-group/camel-can-module/cmake-build-debug
 
-build all: phony test_motor_x8_pro
+build all: phony test_basic_cpp test_motor_x8_pro
 
 # =============================================================================
 # Built-in targets
