@@ -24,38 +24,46 @@
 
 class motorcontrol {
 public:
-    motorcontrol(char* canName, u_int32_t motorId, std::string canName_temp, std::string bitRate){
-        std::string command3= "sudo ip link set "+canName_temp+" up type can bitrate " + bitRate; // TODO: should be modified.
+    motorcontrol(char *canName, std::string canName_temp, std::string bitRate) {
+        std::string command3 =
+                "sudo ip link set " + canName_temp + " up type can bitrate " + bitRate; // TODO: should be modified.
         const char *c3 = command3.c_str();
         system(c3);
         initCanInterface(canName);
-        mMotorID = motorId;
     }
 
     void initCanInterface(const char *CanName);
-    void stopMotor();
-    void turnOnMotor();
-    void turnOffMotor();
-    void canSend(const u_int8_t *data);
+
+    void stopMotor(int motorID);
+
+    void turnOnMotor(int motorID);
+
+    void turnOffMotor(int motorID);
+
+    void canSend(const u_int8_t *data, int motorID);
+
     void canRead();
-    void getEncoder();
-    void setTorque(int Torque);
-    void setVelocity(int Velocity);
-    int getSock(){return mSock;}
-    can_frame getFrame(){return mFrame;}
+
+    void getEncoder(int motorID);
+
+    void setTorque(int Torque, int motorID);
+
+    void setVelocity(int Velocity, int motorID);
+
+    int getSock() { return mSock; }
+
+    can_frame getFrame() { return mFrame; }
 
 private:
     struct can_frame mFrame;
     const char *mCanName;
     int mSock;
     int mSendedCommand;
-    u_int32_t mMotorID;
     u_int32_t mCanID;
 };
 
 //socket 생성
-void motorcontrol::initCanInterface(const char *ifname)
-{
+void motorcontrol::initCanInterface(const char *ifname) {
     //CAN socket 생성
     mCanName = ifname;
     mSock = socket(PF_CAN, SOCK_RAW, CAN_RAW);
@@ -68,8 +76,8 @@ void motorcontrol::initCanInterface(const char *ifname)
 
     //CAN 식별번호 획득
     struct ifreq ifr;
-    strcpy(ifr.ifr_name, mCanName );
-    int ret = ioctl(mSock,SIOCGIFINDEX, &ifr);
+    strcpy(ifr.ifr_name, mCanName);
+    int ret = ioctl(mSock, SIOCGIFINDEX, &ifr);
     if (ret == -1) {
         perror("Fail to get can interface index -");
         return;
@@ -80,8 +88,8 @@ void motorcontrol::initCanInterface(const char *ifname)
     struct sockaddr_can addr;
     addr.can_family = AF_CAN;
     addr.can_ifindex = ifr.ifr_ifindex;
-    ret = bind(mSock, (struct sockaddr *)&addr, sizeof(addr));
-    if(ret == -1) {
+    ret = bind(mSock, (struct sockaddr *) &addr, sizeof(addr));
+    if (ret == -1) {
         perror("Fail to bind can socket -");
         return;
     }
@@ -89,17 +97,17 @@ void motorcontrol::initCanInterface(const char *ifname)
 }
 
 // Data 보내기
-void motorcontrol::canSend(const u_int8_t *data) // TODO : motorId should be specified.
+void motorcontrol::canSend(const u_int8_t *data, int motorID) // TODO : motorId should be specified.
 {
-    u_int32_t tempid = mMotorID & 0x1fffffff;
+    u_int32_t tempid = motorID & 0x1fffffff;
     mFrame.can_id = tempid;
     memcpy(mFrame.data, data, sizeof(data));
-    mFrame.can_dlc = sizeof(data); 
+    mFrame.can_dlc = sizeof(data);
 
-    
+
     //전송
     int tx_bytes = write(mSock, &mFrame, sizeof(mFrame));
-    if(tx_bytes == -1){
+    if (tx_bytes == -1) {
         perror("Fail to transmit can frame -");
         return;
     }
@@ -109,16 +117,15 @@ void motorcontrol::canSend(const u_int8_t *data) // TODO : motorId should be spe
 }
 
 // Data 읽기
-void motorcontrol::canRead()
-{
+void motorcontrol::canRead() {
     int rx_bytes = read(mSock, &mFrame, sizeof(mFrame));
     //feedback msg
     // TODO : Should be changed to better method.
-    while(mFrame.data[0] != mSendedCommand)
-    {
+    while (mFrame.data[0] != mSendedCommand) {
         rx_bytes = read(mSock, &mFrame, sizeof(mFrame));
     }
-    printf("%d %d %d %d %d %d %d %d \n",mFrame.data[0],mFrame.data[1],mFrame.data[2],mFrame.data[3],mFrame.data[4],mFrame.data[5],mFrame.data[6],mFrame.data[7] );
+    printf("%d %d %d %d %d %d %d %d \n", mFrame.data[0], mFrame.data[1], mFrame.data[2], mFrame.data[3], mFrame.data[4],
+           mFrame.data[5], mFrame.data[6], mFrame.data[7]);
 }
 
 
@@ -156,13 +163,12 @@ void motorcontrol::canRead()
 // 25. Write multiturn encoder current position to ROM as motor zero command (0x64)
 
 // 26. Read encoder data command (0x90)
-void motorcontrol::getEncoder()
-{
+void motorcontrol::getEncoder(int motorID) {
     /* 
     1. encoder data 처리 필요
     */
-    u_int8_t requestEncoder[8] = { 0X90, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00 };
-    canSend(requestEncoder);
+    u_int8_t requestEncoder[8] = {0X90, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
+    canSend(requestEncoder, motorID);
     canRead();
     /*
     reply DATA[2] = Encoder position low byte
@@ -172,7 +178,7 @@ void motorcontrol::getEncoder()
     reply DATA[6] = Encoder offset low byte
     reply DATA[7] = Encoder offset high byte
     */
-} 
+}
 
 // 27. Write encoder values to ROM as motor zero command (0x91)
 // 28. Write current position to ROM as motor zero command (0x19)
@@ -183,62 +189,44 @@ void motorcontrol::getEncoder()
 // 33. Read motor status 3 (0x9D)
 
 // 34. Motor off command (0x80)
-void motorcontrol::turnOffMotor()
-{
-    u_int8_t motorON_data[8] = { 0x80, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00 };
-    canSend(motorON_data);
+void motorcontrol::turnOffMotor(int motorID) {
+    u_int8_t motorON_data[8] = {0x80, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
+    canSend(motorON_data, motorID);
 }
 
 // 35. Motor stop command (0x81)
-void motorcontrol::stopMotor()
-{
-    u_int8_t motorStop_data[8] = { 0x81, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00 };
-    canSend(motorStop_data);
+void motorcontrol::stopMotor(int motorID) {
+    u_int8_t motorStop_data[8] = {0x81, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
+    canSend(motorStop_data, motorID);
 }
 
 // 36. Motor running command (0x88)
-void motorcontrol::turnOnMotor()
-{
-    u_int8_t motorON_data[8] = { 0x88, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00 };
-    canSend(motorON_data);
+void motorcontrol::turnOnMotor(int motorID) {
+    u_int8_t motorON_data[8] = {0x88, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
+    canSend(motorON_data, motorID);
 }
 
 // 37. Torque closed-loop command (0xA1)
-void motorcontrol::setTorque(int Torque)
-{
+void motorcontrol::setTorque(int motorID, int Torque) {
     /* 
     1. 따로 데이터 변환 해줄 필요 있음
     2. 모터 회전 방향 지정해줘야함
     */
 
-    u_int8_t torque_data[8] = { 0Xa1, 0X00, 0X00, 0X00, Torque, 0X00, 0X00, 0X00 };
+    u_int8_t torque_data[8] = {0Xa1, 0X00, 0X00, 0X00, Torque, 0X00, 0X00, 0X00};
     int iteration = 0;
-    canSend(torque_data);
+    canSend(torque_data, motorID);
     int rx_bytes = read(mSock, &mFrame, sizeof(mFrame));
-    //feedback msg
-    while(mFrame.data[0] != 0Xa1)
-    {
-        rx_bytes = read(mSock, &mFrame, sizeof(mFrame));
-    }
-
-    // printf("%d %d %d %d %d %d %d %d \n",mFrame.data[0],mFrame.data[1],mFrame.data[2],mFrame.data[3],mFrame.data[4],mFrame.data[5],mFrame.data[6],mFrame.data[7] );
+    canRead();
 }
 
 // 38. Speed closed-loop command (0xA2)
-void motorcontrol::setVelocity(int Velocity)
-{
+void motorcontrol::setVelocity(int motorID, int Velocity) {
     //0.01dps/LSB
-    u_int8_t velocity_data[8] = { 0Xa2, 0X00, 0X00, 0X00, 0x00, Velocity, 0X00, 0X00 };
+    u_int8_t velocity_data[8] = {0Xa2, 0X00, 0X00, 0X00, 0x00, Velocity, 0X00, 0X00};
     int iteration = 0;
-    canSend(velocity_data);
-    int rx_bytes = read(mSock, &mFrame, sizeof(mFrame));
-    //feedback msg
-    while(mFrame.data[0] != 0Xa2)
-    {
-        rx_bytes = read(mSock, &mFrame, sizeof(mFrame));
-    }
-    // printf("%d %d %d %d %d %d %d %d \n",mFrame.data[0],mFrame.data[1],mFrame.data[2],mFrame.data[3],mFrame.data[4],mFrame.data[5],mFrame.data[6],mFrame.data[7] );
-
+    canSend(velocity_data, motorID);
+    canRead();
 }
 
 // 39. Position closed-loop command 1 (0xA3)
