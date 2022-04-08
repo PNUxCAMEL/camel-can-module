@@ -23,9 +23,9 @@
           6. multiple motorId is needed
 */
 
-class motorcontrol {
+class CanMotorX8Pro {
 public:
-    motorcontrol(char *canName, std::string canName_temp, std::string bitRate) {
+    CanMotorX8Pro(char *canName, std::string canName_temp, std::string bitRate) {
         std::string command3 =
                 "sudo ip link set " + canName_temp + " up type can bitrate " + bitRate; // TODO: should be modified.
         const char *c3 = command3.c_str();
@@ -47,7 +47,7 @@ public:
 
     void getEncoder(int motorID);
 
-    void getMultiturnAngle(int motorID);
+    float getMultiturnAngle(int motorID);
 
     void setTorque(int Torque, int motorID);
 
@@ -69,7 +69,7 @@ private:
 };
 
 //socket 생성
-void motorcontrol::initCanInterface(const char *ifname) {
+void CanMotorX8Pro::initCanInterface(const char *ifname) {
     //CAN socket 생성
     mCanName = ifname;
     mSock = socket(PF_CAN, SOCK_RAW, CAN_RAW);
@@ -103,7 +103,7 @@ void motorcontrol::initCanInterface(const char *ifname) {
 }
 
 // Data 보내기
-void motorcontrol::canSend(const u_int8_t *data, int motorID) // TODO : motorId should be specified.
+void CanMotorX8Pro::canSend(const u_int8_t *data, int motorID) // TODO : motorId should be specified.
 {
     u_int32_t tempid = motorID & 0x1fffffff;
     mFrame.can_id = tempid;
@@ -123,12 +123,19 @@ void motorcontrol::canSend(const u_int8_t *data, int motorID) // TODO : motorId 
 }
 
 // Data 읽기
-void motorcontrol::canRead() {
+void CanMotorX8Pro::canRead() {
     int rx_bytes = read(mSock, &mFrame, sizeof(mFrame));
     //feedback msg
     // TODO : Should be changed to better method.
-    while (mFrame.data[0] != mSendedCommand) {
+    int iteration = 0;
+    while (mFrame.data[0] == 0xb1) {
+        iteration ++;
         rx_bytes = read(mSock, &mFrame, sizeof(mFrame));
+        if(iteration > 100)
+        {
+            std::cout<<"failed to read data in while loop"<<std::endl;
+            break;
+        }
     }
 }
 
@@ -167,7 +174,7 @@ void motorcontrol::canRead() {
 // 25. Write multiturn encoder current position to ROM as motor zero command (0x64)
 
 // 26. Read encoder data command (0x90)
-void motorcontrol::getEncoder(int motorID) {
+void CanMotorX8Pro::getEncoder(int motorID) {
     /* 
     1. encoder data 처리 필요
     */
@@ -189,10 +196,7 @@ void motorcontrol::getEncoder(int motorID) {
 // 27. Write encoder values to ROM as motor zero command (0x91)
 // 28. Write current position to ROM as motor zero command (0x19)
 // 29. Read multiturn turns angle command (0x92)
-void motorcontrol::getMultiturnAngle(int motorID) {
-    /*
-    1. encoder data 처리 필요
-    */
+float CanMotorX8Pro::getMultiturnAngle(int motorID) {
     u_int8_t requestEncoder[8] = {0X92, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(requestEncoder, motorID);
     canRead();
@@ -204,8 +208,7 @@ void motorcontrol::getMultiturnAngle(int motorID) {
         degree = -1.0 * degree;
     }
 
-    printf("%f \n", degree);
-
+    return degree;
 }
 
 // 30. Read single circle ange command (0x94)
@@ -214,39 +217,49 @@ void motorcontrol::getMultiturnAngle(int motorID) {
 // 33. Read motor status 3 (0x9D)
 
 // 34. Motor off command (0x80)
-void motorcontrol::turnOffMotor(int motorID) {
+void CanMotorX8Pro::turnOffMotor(int motorID) {
     u_int8_t motorON_data[8] = {0x80, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(motorON_data, motorID);
 }
 
 // 35. Motor stop command (0x81)
-void motorcontrol::stopMotor(int motorID) {
+void CanMotorX8Pro::stopMotor(int motorID) {
     u_int8_t motorStop_data[8] = {0x81, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(motorStop_data, motorID);
 }
 
 // 36. Motor running command (0x88)
-void motorcontrol::turnOnMotor(int motorID) {
+void CanMotorX8Pro::turnOnMotor(int motorID) {
     u_int8_t motorON_data[8] = {0x88, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(motorON_data, motorID);
 }
 
 // 37. Torque closed-loop command (0xA1)
-void motorcontrol::setTorque(int motorID, int torque) {
+// torque_int : 0 ~ 4096 which matches to (-32A ~ 32A)
+void CanMotorX8Pro::setTorque(int motorID, int torque_int) {
 
     /* 
     1. 따로 데이터 변환 해줄 필요 있음
     2. 모터 회전 방향 지정해줘야함
     */
-    u_int8_t torque_data[8] = {0Xa1, 0X00, 0X00, 0X00, torque, 0X00, 0X00, 0X00};
-    int iteration = 0;
+    int temp = torque_int;
+
+    if(torque_int < 0)
+    {
+        temp += + 2 * pow(2,15);
+    }
+
+    u_int8_t torqueLowerData = temp % 256;
+    temp = temp/256;
+    u_int8_t torqueUpperData = temp % 256;
+    u_int8_t torque_data[8] = {0Xa1, 0X00, 0X00, 0X00, torqueLowerData, torqueUpperData, 0X00, 0X00};
     canSend(torque_data, motorID);
     int rx_bytes = read(mSock, &mFrame, sizeof(mFrame));
     canRead();
 }
 
 // 38. Speed closed-loop command (0xA2)
-void motorcontrol::setVelocity(int motorID, int velocity) {
+void CanMotorX8Pro::setVelocity(int motorID, int velocity) {
     //0.01dps/LSB
     u_int8_t velocity_data[8] = {0Xa2, 0X00, 0X00, 0X00, 0x00, velocity, 0X00, 0X00};
     int iteration = 0;
@@ -255,27 +268,27 @@ void motorcontrol::setVelocity(int motorID, int velocity) {
 }
 
 // 39. Position closed-loop command 1 (0xA3)
-void motorcontrol::setPosition1(int motorID, double desiredPosition_rad) {
+void CanMotorX8Pro::setPosition1(int motorID, double desiredPosition_rad) {
     //0.01rad/LSB
     double rad2deg = 180 / 3.141592;
     double position_Deg = desiredPosition_rad * rad2deg * 100 * mGearRatio;
     int position_int = (int) round(position_Deg);
 
-    u_int8_t pos_0;
-    u_int8_t pos_1;
-    u_int8_t pos_2;
-    u_int8_t pos_3;
+    u_int8_t pos0;
+    u_int8_t pos1;
+    u_int8_t pos2;
+    u_int8_t pos3;
 
     int temp = position_int;
-    pos_0 = temp % 256;
+    pos0 = temp % 256;
     temp = temp / 256;
-    pos_1 = temp % 256;
+    pos1 = temp % 256;
     temp = temp / 256;
-    pos_2 = temp % 256;
+    pos2 = temp % 256;
     temp = temp / 256;
-    pos_3 = temp % 256;
+    pos3 = temp % 256;
 
-    u_int8_t velocity_data[8] = {0Xa3, 0X00, 0X00, 0X00, pos_0, pos_1, pos_2, pos_3};
+    u_int8_t velocity_data[8] = {0Xa3, 0X00, 0X00, 0X00, pos0, pos1, pos2, pos3};
     int iteration = 0;
     canSend(velocity_data, motorID);
     canRead();

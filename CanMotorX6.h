@@ -1,0 +1,8 @@
+//
+// Created by jaehoon on 22. 4. 8..
+//
+
+#ifndef CAMEL_CAN_MODULE_CANMOTORX6_H
+#define CAMEL_CAN_MODULE_CANMOTORX6_H
+
+#endif //CAMEL_CAN_MODULE_CANMOTORX6_H
