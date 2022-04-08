@@ -16,7 +16,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -32,7 +33,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -41,14 +43,21 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "test_basic_cpp::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test_basic_cpp-Debug-cc6ae4053f4bddd51611.json",
+					"jsonFile" : "target-test_basic_cpp-Debug-80ad81a548ea5d669bce.json",
 					"name" : "test_basic_cpp",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
+					"id" : "test_motor_x6::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_motor_x6-Debug-9b82e684c4d5798cfc71.json",
+					"name" : "test_motor_x6",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "test_motor_x8_pro::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test_motor_x8_pro-Debug-47cb42ef42b5c71b65db.json",
+					"jsonFile" : "target-test_motor_x8_pro-Debug-0b9deefc7bda8ed11aa3.json",
 					"name" : "test_motor_x8_pro",
 					"projectIndex" : 0
 				}

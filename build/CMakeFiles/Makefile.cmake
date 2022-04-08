@@ -43,6 +43,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/test_motor_x8_pro.dir/DependInfo.cmake"
   "CMakeFiles/test_basic_cpp.dir/DependInfo.cmake"
+  "CMakeFiles/test_motor_x8_pro.dir/DependInfo.cmake"
+  "CMakeFiles/test_motor_x6.dir/DependInfo.cmake"
   )

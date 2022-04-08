@@ -1,5 +1,7 @@
 # ninja log v5
-0	242	1649399835470440538	CMakeFiles/test_motor_x8_pro.dir/test_motor.cpp.o	bdd1148de3a1c86e
-242	291	1649399835518441487	test_motor_x8_pro	fbb4c6c747f68a09
+0	249	1649403931958469304	CMakeFiles/test_motor_x8_pro.dir/test_motor.cpp.o	bdd1148de3a1c86e
+249	297	1649403932006470347	test_motor_x8_pro	fbb4c6c747f68a09
 195	243	1649398025232763579	test_basic_cpp	73d249a5d2988fa
+0	251	1649410624400984583	CMakeFiles/test_motor_x6.dir/test_X6motor.cpp.o	f2b273abb6f7e8bf
+251	300	1649410624448985215	test_motor_x6	49c2437eeac2ae4
 0	195	1649398025184764529	CMakeFiles/test_basic_cpp.dir/test_basic.cpp.o	d705b40bc95a63ad

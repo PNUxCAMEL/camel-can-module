@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/jaehoon/git/repository-group/camel-can-module/test_X8motor.cpp" "CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o" "gcc" "CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o.d"
+  "/home/jaehoon/git/repository-group/camel-can-module/test_X6motor.cpp" "CMakeFiles/test_motor_x6.dir/test_X6motor.cpp.o" "gcc" "CMakeFiles/test_motor_x6.dir/test_X6motor.cpp.o.d"
   )
 
 # Targets to which this target links.

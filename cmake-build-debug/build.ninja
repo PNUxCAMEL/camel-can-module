@@ -83,17 +83,6 @@ build test_basic_cpp: CXX_EXECUTABLE_LINKER__test_basic_cpp_Debug CMakeFiles/tes
   TARGET_FILE = test_basic_cpp
   TARGET_PDB = test_basic_cpp.dbg
 
-
-#############################################
-# Utility command for edit_cache
-
-build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/jaehoon/git/repository-group/camel-can-module/cmake-build-debug && /snap/clion/184/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build edit_cache: phony CMakeFiles/edit_cache.util
-
 # =============================================================================
 # Object build statements for EXECUTABLE target test_motor_x8_pro
 
@@ -103,8 +92,8 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 
 build cmake_object_order_depends_target_test_motor_x8_pro: phony || CMakeFiles/test_motor_x8_pro.dir
 
-build CMakeFiles/test_motor_x8_pro.dir/test_motor.cpp.o: CXX_COMPILER__test_motor_x8_pro_Debug /home/jaehoon/git/repository-group/camel-can-module/test_motor.cpp || cmake_object_order_depends_target_test_motor_x8_pro
-  DEP_FILE = CMakeFiles/test_motor_x8_pro.dir/test_motor.cpp.o.d
+build CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o: CXX_COMPILER__test_motor_x8_pro_Debug /home/jaehoon/git/repository-group/camel-can-module/test_X8motor.cpp || cmake_object_order_depends_target_test_motor_x8_pro
+  DEP_FILE = CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles/test_motor_x8_pro.dir
   OBJECT_FILE_DIR = CMakeFiles/test_motor_x8_pro.dir
@@ -117,13 +106,55 @@ build CMakeFiles/test_motor_x8_pro.dir/test_motor.cpp.o: CXX_COMPILER__test_moto
 #############################################
 # Link the executable test_motor_x8_pro
 
-build test_motor_x8_pro: CXX_EXECUTABLE_LINKER__test_motor_x8_pro_Debug CMakeFiles/test_motor_x8_pro.dir/test_motor.cpp.o
+build test_motor_x8_pro: CXX_EXECUTABLE_LINKER__test_motor_x8_pro_Debug CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/test_motor_x8_pro.dir
   POST_BUILD = :
   PRE_LINK = :
   TARGET_FILE = test_motor_x8_pro
   TARGET_PDB = test_motor_x8_pro.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/jaehoon/git/repository-group/camel-can-module/cmake-build-debug && /snap/clion/184/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Object build statements for EXECUTABLE target test_motor_x6
+
+
+#############################################
+# Order-only phony target for test_motor_x6
+
+build cmake_object_order_depends_target_test_motor_x6: phony || CMakeFiles/test_motor_x6.dir
+
+build CMakeFiles/test_motor_x6.dir/test_X6motor.cpp.o: CXX_COMPILER__test_motor_x6_Debug /home/jaehoon/git/repository-group/camel-can-module/test_X6motor.cpp || cmake_object_order_depends_target_test_motor_x6
+  DEP_FILE = CMakeFiles/test_motor_x6.dir/test_X6motor.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/test_motor_x6.dir
+  OBJECT_FILE_DIR = CMakeFiles/test_motor_x6.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test_motor_x6
+
+
+#############################################
+# Link the executable test_motor_x6
+
+build test_motor_x6: CXX_EXECUTABLE_LINKER__test_motor_x6_Debug CMakeFiles/test_motor_x6.dir/test_X6motor.cpp.o
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/test_motor_x6.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = test_motor_x6
+  TARGET_PDB = test_motor_x6.dbg
 
 # =============================================================================
 # Target aliases.
@@ -136,7 +167,7 @@ build test_motor_x8_pro: CXX_EXECUTABLE_LINKER__test_motor_x8_pro_Debug CMakeFil
 #############################################
 # Folder: /home/jaehoon/git/repository-group/camel-can-module/cmake-build-debug
 
-build all: phony test_basic_cpp test_motor_x8_pro
+build all: phony test_basic_cpp test_motor_x8_pro test_motor_x6
 
 # =============================================================================
 # Built-in targets

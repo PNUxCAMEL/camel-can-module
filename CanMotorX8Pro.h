@@ -47,7 +47,7 @@ public:
 
     void getEncoder(int motorID);
 
-    float getMultiturnAngle(int motorID);
+    float getMultiturnAngularPosition(int motorID);
 
     void setTorque(int Torque, int motorID);
 
@@ -196,7 +196,7 @@ void CanMotorX8Pro::getEncoder(int motorID) {
 // 27. Write encoder values to ROM as motor zero command (0x91)
 // 28. Write current position to ROM as motor zero command (0x19)
 // 29. Read multiturn turns angle command (0x92)
-float CanMotorX8Pro::getMultiturnAngle(int motorID) {
+float CanMotorX8Pro::getMultiturnAngularPosition(int motorID) {
     u_int8_t requestEncoder[8] = {0X92, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(requestEncoder, motorID);
     canRead();

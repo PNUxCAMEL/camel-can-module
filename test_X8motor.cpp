@@ -17,32 +17,32 @@ int main() {
 
 
     double deg2rad = 3.141592 / 180.0;
-    double desiredPosition = 0.0 * deg2rad;
+    double desiredPosition = 360.0 * deg2rad;
 //    double desiredPosition = 360.0 * deg2rad;
 
 
-    motor1AngularPosition = canX8pro.getMultiturnAngle(motor1ID);
+    motor1AngularPosition = canX8pro.getMultiturnAnglularPosition(motor1ID);
     std::cout << "angular position : "<<motor1AngularPosition << std::endl;
-//    canX8pro.setTorque(motor1ID, -150);
-    canX8pro.setPosition1(motor1ID, desiredPosition);
+    canX8pro.setTorque(motor1ID, -150);
+//    canX8pro.setPosition1(motor1ID, desiredPosition);
 //    canX8pro.setVelocity(motor1ID, 0XFF);
 //    sleep(1);
 
     for (int i =0 ; i< 5000 ; i++){
 //        // system time
 //        auto begin = std::chrono::high_resolution_clock::now();
-//        motor1AngularPosition = canX8pro.getMultiturnAngle(motor1ID);
+//        motor1AngularPosition = canX8pro.getMultiturnAnglularPosition(motor1ID);
 //        // system time
 //        auto end = std::chrono::high_resolution_clock::now();
 //        auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin);
 //        std::cout << i << "angular position : "<<motor1AngularPosition << " Time measured: "<< elapsed.count() * 1e-9 <<"seconds" <<std::endl;
-//        motor1AngularPosition = canX8pro.getMultiturnAngle(motor1ID);
+//        motor1AngularPosition = canX8pro.getMultiturnAnglularPosition(motor1ID);
 //        std::cout << "angular position : "<<motor1AngularPosition << std::endl;
         usleep(1000);
     }
 //    sleep(20);
 //    canX8pro.getEncoder(motor1ID);
-    motor1AngularPosition = canX8pro.getMultiturnAngle(motor1ID);
+    motor1AngularPosition = canX8pro.getMultiturnAngularPosition(motor1ID);
     std::cout << "angular position : "<<motor1AngularPosition << std::endl;
 
 //    canX8pro.turnOffMotor(motor1ID);

@@ -69,28 +69,28 @@ include CMakeFiles/test_motor_x8_pro.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/test_motor_x8_pro.dir/flags.make
 
-CMakeFiles/test_motor_x8_pro.dir/test_motor.cpp.o: CMakeFiles/test_motor_x8_pro.dir/flags.make
-CMakeFiles/test_motor_x8_pro.dir/test_motor.cpp.o: ../test_motor.cpp
-CMakeFiles/test_motor_x8_pro.dir/test_motor.cpp.o: CMakeFiles/test_motor_x8_pro.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jaehoon/git/repository-group/camel-can-module/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test_motor_x8_pro.dir/test_motor.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_motor_x8_pro.dir/test_motor.cpp.o -MF CMakeFiles/test_motor_x8_pro.dir/test_motor.cpp.o.d -o CMakeFiles/test_motor_x8_pro.dir/test_motor.cpp.o -c /home/jaehoon/git/repository-group/camel-can-module/test_motor.cpp
+CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o: CMakeFiles/test_motor_x8_pro.dir/flags.make
+CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o: ../test_X8motor.cpp
+CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o: CMakeFiles/test_motor_x8_pro.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jaehoon/git/repository-group/camel-can-module/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o -MF CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o.d -o CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o -c /home/jaehoon/git/repository-group/camel-can-module/test_X8motor.cpp
 
-CMakeFiles/test_motor_x8_pro.dir/test_motor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_motor_x8_pro.dir/test_motor.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jaehoon/git/repository-group/camel-can-module/test_motor.cpp > CMakeFiles/test_motor_x8_pro.dir/test_motor.cpp.i
+CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jaehoon/git/repository-group/camel-can-module/test_X8motor.cpp > CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.i
 
-CMakeFiles/test_motor_x8_pro.dir/test_motor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_motor_x8_pro.dir/test_motor.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jaehoon/git/repository-group/camel-can-module/test_motor.cpp -o CMakeFiles/test_motor_x8_pro.dir/test_motor.cpp.s
+CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jaehoon/git/repository-group/camel-can-module/test_X8motor.cpp -o CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.s
 
 # Object files for target test_motor_x8_pro
 test_motor_x8_pro_OBJECTS = \
-"CMakeFiles/test_motor_x8_pro.dir/test_motor.cpp.o"
+"CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o"
 
 # External object files for target test_motor_x8_pro
 test_motor_x8_pro_EXTERNAL_OBJECTS =
 
-test_motor_x8_pro: CMakeFiles/test_motor_x8_pro.dir/test_motor.cpp.o
+test_motor_x8_pro: CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o
 test_motor_x8_pro: CMakeFiles/test_motor_x8_pro.dir/build.make
 test_motor_x8_pro: CMakeFiles/test_motor_x8_pro.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jaehoon/git/repository-group/camel-can-module/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable test_motor_x8_pro"
