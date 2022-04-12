@@ -67,8 +67,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/jaehoon/git/repository-group/camel-can-module/cmake-build-debug",
-		"source" : "/home/jaehoon/git/repository-group/camel-can-module"
+		"build" : "/home/jaehyung/camel-can-module/cmake-build-debug",
+		"source" : "/home/jaehyung/camel-can-module"
 	},
 	"version" : 
 	{

@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o -o test_motor_x8_pro 

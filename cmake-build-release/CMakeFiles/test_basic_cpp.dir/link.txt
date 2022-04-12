@@ -1,0 +1,1 @@
+/usr/bin/g++ -O3 -DNDEBUG CMakeFiles/test_basic_cpp.dir/test_basic.cpp.o -o test_basic_cpp 

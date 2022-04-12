@@ -49,6 +49,21 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
+			"path" : "/snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeFindCodeBlocks.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/ProcessorCount.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
 			"path" : "/snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake"
 		},
 		{
@@ -125,8 +140,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/jaehoon/git/repository-group/camel-can-module/cmake-build-debug",
-		"source" : "/home/jaehoon/git/repository-group/camel-can-module"
+		"build" : "/home/jaehyung/camel-can-module/cmake-build-debug",
+		"source" : "/home/jaehyung/camel-can-module"
 	},
 	"version" : 
 	{

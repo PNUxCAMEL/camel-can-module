@@ -11,11 +11,11 @@ int main() {
     double deg2rad = 3.141592 / 180.0;
     float motor1AngularPosition = 0;
 
-    int Kp = 1.0;
-    float desiredPosition = 90.0;
+    int Kp = 50.0;
+    float desiredPosition = 0.0;
     float currentPosition = 0;
     int torque = Kp * (desiredPosition - currentPosition);
-
+    int torqueLimit = 25;
     CanMotorX6 canX6(canName, canName_temp, bitRate);
     if (canX6.getSock() < 0) { return -1; }
     canX6.turnOnMotor(motor1ID);
@@ -30,19 +30,20 @@ int main() {
         torque = Kp * (desiredPosition - currentPosition);
         std::cout << "angular position : "<<motor1AngularPosition << std::endl;
 
-        if(torque > 18)
+        if(torque > torqueLimit)
             {
-                torque = 18;
+                torque = torqueLimit;
             }
-        else if(torque < -18)
+        else if(torque < -torqueLimit)
             {
-                torque = -18;
+                torque = -torqueLimit;
             }
 
         std::cout << "input torque : " << torque <<std::endl;
+
+        if (abs(desiredPosition - currentPosition) < 0.01) {break ;}
         canX6.setTorque(motor1ID, torque);
         usleep(1000);
-        if (abs(desiredPosition - currentPosition) < 1.0) {break ;}
     }
 
 //    for (int i =0 ; i< 10000 ; i++){
