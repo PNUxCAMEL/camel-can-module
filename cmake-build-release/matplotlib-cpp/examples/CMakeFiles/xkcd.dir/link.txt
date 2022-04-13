@@ -1,0 +1,1 @@
+/usr/bin/g++ -O3 -DNDEBUG -rdynamic CMakeFiles/xkcd.dir/xkcd.cpp.o -o xkcd  -lpython3.6m 

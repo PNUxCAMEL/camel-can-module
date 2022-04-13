@@ -222,6 +222,7 @@ CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o: ../test_X8motor.cpp \
   /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
   /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+  ../test_X8motor.h \
   /usr/include/c++/7/chrono \
   /usr/include/c++/7/ratio \
   /usr/include/c++/7/limits \
@@ -234,6 +235,8 @@ CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o: ../test_X8motor.cpp \
 /usr/include/c++/7/limits:
 
 /usr/include/c++/7/ratio:
+
+../test_X8motor.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 

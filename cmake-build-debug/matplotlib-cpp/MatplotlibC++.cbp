@@ -1,0 +1,1383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="MatplotlibC++"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\matplotlib-cpp\;CMake Files\matplotlib-cpp\examples\;CMake Files\matplotlib-cpp\cmake\;CMake Files\matplotlib-cpp\cmake\modules\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="xkcd">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/xkcd" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 xkcd"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="xkcd/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/xkcd" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 xkcd/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fill">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/fill" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 fill"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fill/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/fill" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 fill/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="update">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/update" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 update"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="update/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/update" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 update/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fill_inbetween">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/fill_inbetween" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 fill_inbetween"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fill_inbetween/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/fill_inbetween" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 fill_inbetween/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="eigen">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/eigen" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 eigen"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="eigen/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/eigen" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 eigen/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="spy">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/spy" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 spy"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="spy/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/spy" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 spy/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="semilogy">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/semilogy" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 semilogy"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="semilogy/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/semilogy" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 semilogy/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="errorbar">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/errorbar" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 errorbar"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="errorbar/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/errorbar" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 errorbar/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="axlines">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/axlines" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 axlines"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="axlines/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/axlines" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 axlines/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="legend">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/legend" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 legend"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="legend/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/legend" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 legend/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="basic">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/basic" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 basic"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="basic/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/basic" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 basic/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="surface">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/surface" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 surface"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="surface/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/surface" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 surface/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="contour">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/contour" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 contour"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="contour/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/contour" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 contour/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bar">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/bar" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 bar"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bar/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/bar" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 bar/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="loglog">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/loglog" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 loglog"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="loglog/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/loglog" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 loglog/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="imshow">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/imshow" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 imshow"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="imshow/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/imshow" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 imshow/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="minimal">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/minimal" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 minimal"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="minimal/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/minimal" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 minimal/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="modern">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/modern" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 modern"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="modern/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/modern" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 modern/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="semilogx">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/semilogx" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 semilogx"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="semilogx/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/semilogx" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 semilogx/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="subplot">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/subplot" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 subplot"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="subplot/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/subplot" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 subplot/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="nonblock">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/nonblock" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 nonblock"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="nonblock/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/nonblock" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 nonblock/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="quiver">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/quiver" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 quiver"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="quiver/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/quiver" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 quiver/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="scatter">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/scatter" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 scatter"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="scatter/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/scatter" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 scatter/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="small">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/small" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 small"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="small/fast">
+				<Option output="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/small" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/jaehyung/.local/lib/python3.6/site-packages/numpy/core/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 small/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jaehyung/camel-can-module/cmake-build-debug/matplotlib-cpp/examples/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/axlines.cpp">
+			<Option target="axlines"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/bar.cpp">
+			<Option target="bar"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/basic.cpp">
+			<Option target="basic"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/contour.cpp">
+			<Option target="contour"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/eigen.cpp">
+			<Option target="eigen"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/errorbar.cpp">
+			<Option target="errorbar"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/fill.cpp">
+			<Option target="fill"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/fill_inbetween.cpp">
+			<Option target="fill_inbetween"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/imshow.cpp">
+			<Option target="imshow"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/legend.cpp">
+			<Option target="legend"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/loglog.cpp">
+			<Option target="loglog"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/minimal.cpp">
+			<Option target="minimal"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/modern.cpp">
+			<Option target="modern"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/nonblock.cpp">
+			<Option target="nonblock"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/quiver.cpp">
+			<Option target="quiver"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/scatter.cpp">
+			<Option target="scatter"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/semilogx.cpp">
+			<Option target="semilogx"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/semilogy.cpp">
+			<Option target="semilogy"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/small.cpp">
+			<Option target="small"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/spy.cpp">
+			<Option target="spy"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/subplot.cpp">
+			<Option target="subplot"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/surface.cpp">
+			<Option target="surface"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/update.cpp">
+			<Option target="update"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/xkcd.cpp">
+			<Option target="xkcd"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/matplotlibcpp.h">
+			<Option target="xkcd"/>
+			<Option target="fill"/>
+			<Option target="update"/>
+			<Option target="fill_inbetween"/>
+			<Option target="eigen"/>
+			<Option target="spy"/>
+			<Option target="semilogy"/>
+			<Option target="errorbar"/>
+			<Option target="axlines"/>
+			<Option target="legend"/>
+			<Option target="basic"/>
+			<Option target="surface"/>
+			<Option target="contour"/>
+			<Option target="bar"/>
+			<Option target="loglog"/>
+			<Option target="imshow"/>
+			<Option target="minimal"/>
+			<Option target="modern"/>
+			<Option target="semilogx"/>
+			<Option target="subplot"/>
+			<Option target="nonblock"/>
+			<Option target="quiver"/>
+			<Option target="scatter"/>
+			<Option target="small"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\matplotlib-cpp\"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/examples/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\matplotlib-cpp\examples\"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/cmake/modules/FindEigen3.cmake">
+			<Option virtualFolder="CMake Files\matplotlib-cpp\cmake\modules\"/>
+		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/matplotlib-cpp/cmake/modules/FindNumPy.cmake">
+			<Option virtualFolder="CMake Files\matplotlib-cpp\cmake\modules\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

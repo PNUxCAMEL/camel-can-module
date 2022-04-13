@@ -182,6 +182,9 @@
 		<Unit filename="/home/jaehyung/camel-can-module/test_X8motor.cpp">
 			<Option target="test_motor_x8_pro"/>
 		</Unit>
+		<Unit filename="/home/jaehyung/camel-can-module/test_X8motor.h">
+			<Option target="test_motor_x8_pro"/>
+		</Unit>
 		<Unit filename="/home/jaehyung/camel-can-module/test_basic.cpp">
 			<Option target="test_basic_cpp"/>
 		</Unit>

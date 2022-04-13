@@ -1,0 +1,1 @@
+/usr/bin/g++ -O3 -DNDEBUG -rdynamic CMakeFiles/modern.dir/modern.cpp.o -o modern  -lpython3.6m 

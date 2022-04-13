@@ -1,0 +1,1 @@
+/usr/bin/g++ -O3 -DNDEBUG -rdynamic CMakeFiles/bar.dir/bar.cpp.o -o bar  -lpython3.6m 

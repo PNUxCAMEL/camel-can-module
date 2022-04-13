@@ -13,7 +13,7 @@
 #include <sstream>
 #include <cmath>
 
-// author@ Jaehyeong Park
+// author@ Jaehyeong Park & Jaehoon An
 /*
     TODO: 1. hex2rad, hex2rad/sec
           2. position limit 
@@ -261,6 +261,8 @@ void CanMotorX8Pro::stopMotor(int motorID) {
 void CanMotorX8Pro::turnOnMotor(int motorID) {
     u_int8_t data[8] = {0x88, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(data, motorID);
+    sleep(5);
+    std::cout << "motor "<<motorID<<" is turned on" << std::endl;
 }
 
 // 37. Torque closed-loop command (0xA1)

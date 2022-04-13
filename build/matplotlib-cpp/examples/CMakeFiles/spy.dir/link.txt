@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/spy.dir/spy.cpp.o -o spy  -lpython3.6m 

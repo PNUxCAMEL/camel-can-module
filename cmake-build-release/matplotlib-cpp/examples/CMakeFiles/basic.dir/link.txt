@@ -1,0 +1,1 @@
+/usr/bin/g++ -O3 -DNDEBUG -rdynamic CMakeFiles/basic.dir/basic.cpp.o -o basic  -lpython3.6m 

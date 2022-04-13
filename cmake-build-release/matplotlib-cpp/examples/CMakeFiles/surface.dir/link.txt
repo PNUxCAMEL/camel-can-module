@@ -1,0 +1,1 @@
+/usr/bin/g++ -O3 -DNDEBUG -rdynamic CMakeFiles/surface.dir/surface.cpp.o -o surface  -lpython3.6m 

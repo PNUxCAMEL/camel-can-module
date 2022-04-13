@@ -1,0 +1,1 @@
+/usr/bin/g++ -O3 -DNDEBUG -rdynamic CMakeFiles/subplot.dir/subplot.cpp.o -o subplot  -lpython3.6m 

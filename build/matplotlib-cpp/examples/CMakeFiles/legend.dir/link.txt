@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/legend.dir/legend.cpp.o -o legend  -lpython3.6m 

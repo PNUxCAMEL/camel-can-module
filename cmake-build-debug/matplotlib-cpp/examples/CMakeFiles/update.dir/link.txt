@@ -1,0 +1,1 @@
+/usr/bin/g++ -g -rdynamic CMakeFiles/update.dir/update.cpp.o -o update  -lpython3.6m 

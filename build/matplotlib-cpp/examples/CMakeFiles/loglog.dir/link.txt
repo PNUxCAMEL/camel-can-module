@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/loglog.dir/loglog.cpp.o -o loglog  -lpython3.6m 

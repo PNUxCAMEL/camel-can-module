@@ -1,0 +1,1 @@
+/usr/bin/g++ -g -rdynamic CMakeFiles/quiver.dir/quiver.cpp.o -o quiver  -lpython3.6m 

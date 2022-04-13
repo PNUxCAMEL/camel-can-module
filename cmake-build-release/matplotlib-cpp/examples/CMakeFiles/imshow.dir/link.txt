@@ -1,0 +1,1 @@
+/usr/bin/g++ -O3 -DNDEBUG -rdynamic CMakeFiles/imshow.dir/imshow.cpp.o -o imshow  -lpython3.6m 

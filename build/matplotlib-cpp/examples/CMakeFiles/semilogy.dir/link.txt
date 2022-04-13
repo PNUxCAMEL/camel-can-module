@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/semilogy.dir/semilogy.cpp.o -o semilogy  -lpython3.6m 
