@@ -2,8 +2,8 @@
 // Created by jaehoon on 22. 4. 8..
 //
 
-#ifndef CAMEL_CAN_MODULE_CANMOTORX6V1_H
-#define CAMEL_CAN_MODULE_CANMOTORX6V1_H
+#ifndef CAMEL_CAN_MODULE_CANMOTORX6_HWAYOUNG_H
+#define CAMEL_CAN_MODULE_CANMOTORX6_HWAYOUNG_H
 
 #include <iostream>
 #include <linux/can.h>
@@ -32,9 +32,9 @@
           8. output of the getAngle method should be changed to [rad] scale.
 */
 
-class CanMotorX6V1 {
+class CanMotorX6_Hwayoung {
 public:
-    CanMotorX6V1(char *canName, std::string canName_temp, std::string bitRate) {
+    CanMotorX6_Hwayoung(char *canName, std::string canName_temp, std::string bitRate) {
         std::string command3 =
                 "sudo ip link set " + canName_temp + " up type can bitrate " + bitRate; // TODO: should be modified.
         const char *c3 = command3.c_str();
@@ -80,7 +80,7 @@ private:
 };
 
 //socket 생성
-void CanMotorX6V1::initCanInterface(const char *ifname) {
+void CanMotorX6_Hwayoung::initCanInterface(const char *ifname) {
     //CAN socket 생성
     mCanName = ifname;
     mSock = socket(PF_CAN, SOCK_RAW, CAN_RAW);
@@ -114,7 +114,7 @@ void CanMotorX6V1::initCanInterface(const char *ifname) {
 }
 
 // Data 보내기
-void CanMotorX6V1::canSend(const u_int8_t *data, int motorID)
+void CanMotorX6_Hwayoung::canSend(const u_int8_t *data, int motorID)
 {
     u_int32_t tempid = motorID & 0x1fffffff;
     mFrame.can_id = tempid;
@@ -134,7 +134,7 @@ void CanMotorX6V1::canSend(const u_int8_t *data, int motorID)
 }
 
 // Data 읽기
-void CanMotorX6V1::canRead() {
+void CanMotorX6_Hwayoung::canRead() {
     int rx_bytes = read(mSock, &mFrame, sizeof(mFrame));
     //feedback msg
     // TODO : Should be changed to better method.
@@ -185,7 +185,8 @@ void CanMotorX6V1::canRead() {
 // 25. Write multiturn encoder current position to ROM as motor zero command (0x64)
 
 // 26. Read encoder data command (0x90)
-void CanMotorX6V1::getEncoder(int motorID) {
+//TODO
+void CanMotorX6_Hwayoung::getEncoder(int motorID) {
     /*
     1. encoder data 처리 필요
     */
@@ -194,20 +195,13 @@ void CanMotorX6V1::getEncoder(int motorID) {
     canRead();
     printf("%d %d %d %d %d %d %d %d \n", mFrame.data[0], mFrame.data[1], mFrame.data[2], mFrame.data[3], mFrame.data[4],
            mFrame.data[5], mFrame.data[6], mFrame.data[7]);
-    /*
-    reply DATA[2] = Encoder position low byte
-    reply DATA[3] = Encoder position high byte
-    reply DATA[4] = Encoder original position low byte
-    reply DATA[5] = Encoder original position high byte
-    reply DATA[6] = Encoder offset low byte
-    reply DATA[7] = Encoder offset high byte
-    */
 }
 
 // 27. Write encoder values to ROM as motor zero command (0x91)
 // 28. Write current position to ROM as motor zero command (0x19)
 // 29. Read multiturn turns angle command (0x92)
-float CanMotorX6V1::getMultiturnAngularPosition(int motorID) {
+//TODO
+float CanMotorX6_Hwayoung::getMultiturnAngularPosition(int motorID) {
     u_int8_t requestEncoder[8] = {0X92, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(requestEncoder, motorID);
     canRead();
@@ -219,8 +213,6 @@ float CanMotorX6V1::getMultiturnAngularPosition(int motorID) {
     if (mFrame.data[7] > 127) {
         degree += - 256.0 * 256.0 * 256.0 * 256.0 * 0.01 / mGearRatio;
     }
-
-
     return degree;
 }
 
@@ -230,29 +222,32 @@ float CanMotorX6V1::getMultiturnAngularPosition(int motorID) {
 // 33. Read motor status 3 (0x9D)
 
 // 34. Motor off command (0x80)
-void CanMotorX6V1::turnOffMotor(int motorID) {
+void CanMotorX6_Hwayoung::turnOffMotor(int motorID) {
     u_int8_t motorON_data[8] = {0x80, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(motorON_data, motorID);
     canRead();
 }
 
 // 35. Motor stop command (0x81)
-void CanMotorX6V1::stopMotor(int motorID) {
+void CanMotorX6_Hwayoung::stopMotor(int motorID) {
     u_int8_t motorStop_data[8] = {0x81, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(motorStop_data, motorID);
     canRead();
 }
 
 // 36. Motor running command (0x88)
-void CanMotorX6V1::turnOnMotor(int motorID) {
+void CanMotorX6_Hwayoung::turnOnMotor(int motorID) {
     u_int8_t motorON_data[8] = {0x88, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(motorON_data, motorID);
     canRead();
+    sleep(5);
+    std::cout << "motor " << motorID << " is turned on" << std::endl;
 }
 
 // 37. Torque closed-loop command (0xA1)
 // torque_int : 0 ~ 4096 which matches to (-32A ~ 32A)
-void CanMotorX6V1::setTorque(int motorID, int torque_int) {
+//TODO: test motor torque in real world experiment.
+void CanMotorX6_Hwayoung::setTorque(int motorID, int torque_int) {
 
     /*
     1. 따로 데이터 변환 해줄 필요 있음
@@ -273,7 +268,8 @@ void CanMotorX6V1::setTorque(int motorID, int torque_int) {
 }
 
 // 38. Speed closed-loop command (0xA2)
-void CanMotorX6V1::setVelocity(int motorID, int velocity) {
+//TODO
+void CanMotorX6_Hwayoung::setVelocity(int motorID, int velocity) {
     //0.01dps/LSB
     u_int8_t velocity_data[8] = {0Xa2, 0X00, 0X00, 0X00, 0x00, velocity, 0X00, 0X00};
     int iteration = 0;
@@ -282,7 +278,8 @@ void CanMotorX6V1::setVelocity(int motorID, int velocity) {
 }
 
 // 39. Position closed-loop command 1 (0xA3)
-void CanMotorX6V1::setPosition1(int motorID, double desiredPosition_rad) {
+//TODO
+void CanMotorX6_Hwayoung::setPosition1(int motorID, double desiredPosition_rad) {
     //0.01rad/LSB
     double rad2deg = 180 / 3.141592;
     double position_Deg = desiredPosition_rad * rad2deg * 100 * mGearRatio;
@@ -310,7 +307,8 @@ void CanMotorX6V1::setPosition1(int motorID, double desiredPosition_rad) {
 }
 
 // 40. Position closed-loop command 2 (0xA4)
-void CanMotorX6V1::setPosition2(int motorID, double desiredPosition_rad, int maxSpeed_dps) {
+//TODO
+void CanMotorX6_Hwayoung::setPosition2(int motorID, double desiredPosition_rad, int maxSpeed_dps) {
     //0.01rad/LSB
     double rad2deg = 180 / 3.141592;
     double position_Deg = desiredPosition_rad * rad2deg * 100 * mGearRatio;
@@ -364,4 +362,4 @@ void CanMotorX6V1::setPosition2(int motorID, double desiredPosition_rad, int max
 
 
 
-#endif //CAMEL_CAN_MODULE_CANMOTORX6V1_H
+#endif //CAMEL_CAN_MODULE_CANMOTORX6_HWAYOUNG_H

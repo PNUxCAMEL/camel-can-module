@@ -12,7 +12,7 @@
 
 # =============================================================================
 # Project: camel_can_module
-# Configurations: Debug
+# Configurations: Release
 # =============================================================================
 
 #############################################
@@ -24,7 +24,7 @@ ninja_required_version = 1.5
 #############################################
 # Set configuration variable for custom commands.
 
-CONFIGURATION = Debug
+CONFIGURATION = Release
 # =============================================================================
 # Include auxiliary files.
 
@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/jaehoon/git/repository-group/camel-can-module/cmake-build-debug/
+cmake_ninja_workdir = /home/jaehoon/git/repository-group/camel-can-module/cmake-build-release/
 # =============================================================================
 # Object build statements for EXECUTABLE target test_basic_cpp
 
@@ -49,9 +49,9 @@ cmake_ninja_workdir = /home/jaehoon/git/repository-group/camel-can-module/cmake-
 
 build cmake_object_order_depends_target_test_basic_cpp: phony || CMakeFiles/test_basic_cpp.dir
 
-build CMakeFiles/test_basic_cpp.dir/test_basic.cpp.o: CXX_COMPILER__test_basic_cpp_Debug /home/jaehoon/git/repository-group/camel-can-module/test_basic.cpp || cmake_object_order_depends_target_test_basic_cpp
+build CMakeFiles/test_basic_cpp.dir/test_basic.cpp.o: CXX_COMPILER__test_basic_cpp_Release /home/jaehoon/git/repository-group/camel-can-module/test_basic.cpp || cmake_object_order_depends_target_test_basic_cpp
   DEP_FILE = CMakeFiles/test_basic_cpp.dir/test_basic.cpp.o.d
-  FLAGS = -g -std=gnu++14
+  FLAGS = -O3 -DNDEBUG -std=gnu++14
   OBJECT_DIR = CMakeFiles/test_basic_cpp.dir
   OBJECT_FILE_DIR = CMakeFiles/test_basic_cpp.dir
   TARGET_COMPILE_PDB = CMakeFiles/test_basic_cpp.dir/
@@ -65,8 +65,8 @@ build CMakeFiles/test_basic_cpp.dir/test_basic.cpp.o: CXX_COMPILER__test_basic_c
 #############################################
 # Link the executable test_basic_cpp
 
-build test_basic_cpp: CXX_EXECUTABLE_LINKER__test_basic_cpp_Debug CMakeFiles/test_basic_cpp.dir/test_basic.cpp.o
-  FLAGS = -g
+build test_basic_cpp: CXX_EXECUTABLE_LINKER__test_basic_cpp_Release CMakeFiles/test_basic_cpp.dir/test_basic.cpp.o
+  FLAGS = -O3 -DNDEBUG
   OBJECT_DIR = CMakeFiles/test_basic_cpp.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -83,9 +83,9 @@ build test_basic_cpp: CXX_EXECUTABLE_LINKER__test_basic_cpp_Debug CMakeFiles/tes
 
 build cmake_object_order_depends_target_test_motor_x8_pro: phony || CMakeFiles/test_motor_x8_pro.dir
 
-build CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o: CXX_COMPILER__test_motor_x8_pro_Debug /home/jaehoon/git/repository-group/camel-can-module/test_X8motor.cpp || cmake_object_order_depends_target_test_motor_x8_pro
+build CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o: CXX_COMPILER__test_motor_x8_pro_Release /home/jaehoon/git/repository-group/camel-can-module/test_X8motor.cpp || cmake_object_order_depends_target_test_motor_x8_pro
   DEP_FILE = CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o.d
-  FLAGS = -g -std=gnu++14
+  FLAGS = -O3 -DNDEBUG -std=gnu++14
   OBJECT_DIR = CMakeFiles/test_motor_x8_pro.dir
   OBJECT_FILE_DIR = CMakeFiles/test_motor_x8_pro.dir
   TARGET_COMPILE_PDB = CMakeFiles/test_motor_x8_pro.dir/
@@ -99,8 +99,8 @@ build CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o: CXX_COMPILER__test_mo
 #############################################
 # Link the executable test_motor_x8_pro
 
-build test_motor_x8_pro: CXX_EXECUTABLE_LINKER__test_motor_x8_pro_Debug CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o
-  FLAGS = -g
+build test_motor_x8_pro: CXX_EXECUTABLE_LINKER__test_motor_x8_pro_Release CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o
+  FLAGS = -O3 -DNDEBUG
   OBJECT_DIR = CMakeFiles/test_motor_x8_pro.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -117,9 +117,9 @@ build test_motor_x8_pro: CXX_EXECUTABLE_LINKER__test_motor_x8_pro_Debug CMakeFil
 
 build cmake_object_order_depends_target_test_motor_x6: phony || CMakeFiles/test_motor_x6.dir
 
-build CMakeFiles/test_motor_x6.dir/test_X6motor.cpp.o: CXX_COMPILER__test_motor_x6_Debug /home/jaehoon/git/repository-group/camel-can-module/test_X6motor.cpp || cmake_object_order_depends_target_test_motor_x6
+build CMakeFiles/test_motor_x6.dir/test_X6motor.cpp.o: CXX_COMPILER__test_motor_x6_Release /home/jaehoon/git/repository-group/camel-can-module/test_X6motor.cpp || cmake_object_order_depends_target_test_motor_x6
   DEP_FILE = CMakeFiles/test_motor_x6.dir/test_X6motor.cpp.o.d
-  FLAGS = -g -std=gnu++14
+  FLAGS = -O3 -DNDEBUG -std=gnu++14
   OBJECT_DIR = CMakeFiles/test_motor_x6.dir
   OBJECT_FILE_DIR = CMakeFiles/test_motor_x6.dir
   TARGET_COMPILE_PDB = CMakeFiles/test_motor_x6.dir/
@@ -133,8 +133,8 @@ build CMakeFiles/test_motor_x6.dir/test_X6motor.cpp.o: CXX_COMPILER__test_motor_
 #############################################
 # Link the executable test_motor_x6
 
-build test_motor_x6: CXX_EXECUTABLE_LINKER__test_motor_x6_Debug CMakeFiles/test_motor_x6.dir/test_X6motor.cpp.o
-  FLAGS = -g
+build test_motor_x6: CXX_EXECUTABLE_LINKER__test_motor_x6_Release CMakeFiles/test_motor_x6.dir/test_X6motor.cpp.o
+  FLAGS = -O3 -DNDEBUG
   OBJECT_DIR = CMakeFiles/test_motor_x6.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -147,7 +147,7 @@ build test_motor_x6: CXX_EXECUTABLE_LINKER__test_motor_x6_Debug CMakeFiles/test_
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/jaehoon/git/repository-group/camel-can-module/cmake-build-debug && /snap/clion/190/bin/cmake/linux/bin/ccmake -S/home/jaehoon/git/repository-group/camel-can-module -B/home/jaehoon/git/repository-group/camel-can-module/cmake-build-debug
+  COMMAND = cd /home/jaehoon/git/repository-group/camel-can-module/cmake-build-release && /snap/clion/190/bin/cmake/linux/bin/ccmake -S/home/jaehoon/git/repository-group/camel-can-module -B/home/jaehoon/git/repository-group/camel-can-module/cmake-build-release
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -159,7 +159,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/jaehoon/git/repository-group/camel-can-module/cmake-build-debug && /snap/clion/190/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/jaehoon/git/repository-group/camel-can-module -B/home/jaehoon/git/repository-group/camel-can-module/cmake-build-debug
+  COMMAND = cd /home/jaehoon/git/repository-group/camel-can-module/cmake-build-release && /snap/clion/190/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/jaehoon/git/repository-group/camel-can-module -B/home/jaehoon/git/repository-group/camel-can-module/cmake-build-release
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -175,7 +175,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 #############################################
-# Folder: /home/jaehoon/git/repository-group/camel-can-module/cmake-build-debug
+# Folder: /home/jaehoon/git/repository-group/camel-can-module/cmake-build-release
 
 build all: phony test_basic_cpp test_motor_x8_pro test_motor_x6
 

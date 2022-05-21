@@ -1,33 +1,61 @@
-#include "CanMotorX8Pro.h"
+#include "CanMotorX8ProV2.h"
 #include "test_X8motor.h"
 #include <chrono> //time check
 
-std::string canName_temp = "can8";
+std::string canName_temp = "can0";
 std::string bitRate = "1000000";
-char *canName = "can8";
+char *canName = "can0";
+
 int motor1ID = 0x141;
-CanMotorX8Pro canX8pro(canName, canName_temp, bitRate);
+CanMotorX8ProV2 canX8pro(canName, canName_temp, bitRate);
 int torque = 0;
 int torqueLimit = 40; //integer value
 double deg2rad = 3.141592 / 180.0;
 double rad2deg = 180.0 / 3.141592;
+
+// TODO : type of all variables should be changed to 'Double'
 float motor1AngularPosition = 0;
 float motor1AngularPosition_2 = 0;
 float motor1AngularVelocity = 0;
 int motor1Encoder = 0;
+int motor1EncoderRaw = 0;
+int motor1EncoderOffset = 0;
 
 int main() {
     if (canX8pro.getSock() < 0) { return -1; }
+    int iteration = 0;
     canX8pro.turnOnMotor(motor1ID);
+    canX8pro.setPosition1(motor1ID, 180.0 * canX8pro.deg2rad);
+    while(true)
+    {
+        iteration++;
+        canX8pro.readEncoder(motor1ID);
 
-    int Kp = 30;
-    int Kd = 2.5;
-    float desiredVelocity = 0.0;
-    float desiredPosition = 0.0 * deg2rad;
+        canX8pro.readMultiturnAngularPosition(motor1ID);
 
-    testPDcontrol(Kp, Kd, desiredPosition, desiredVelocity);
+        std::cout<<"1.Angular position[deg] : "<<canX8pro.getEncoder()*canX8pro.enc2rad*canX8pro.rad2deg / 9.0<<std::endl;
+//        std::cout<<"2.Angular position[deg] : "<<canX8pro.getAngularPosition()*canX8pro.rad2deg<<std::endl;
+//        std::cout<<"Encoder value : "<<canX8pro.getEncoder()<<std::endl;
+//        std::cout<<"Encoder Raw value : "<<canX8pro.getEncoderRaw()<<std::endl;
+//        std::cout<<"Encoder Offset value : "<<canX8pro.getEncoderOffset()<<std::endl;
+        usleep(1000);
+        if(iteration == 5000)
+        {
+            break;
+        }
+    }
 
-    canX8pro.turnOffMotor(motor1ID);
+
+
+//    canX8pro.turnOnMotor(motor1ID);
+
+//    int Kp = 30;
+//    int Kd = 2.5;
+//    float desiredVelocity = 0.0;
+//    float desiredPosition = 180.0 * deg2rad;
+//    testPDcontrol(Kp, Kd, desiredPosition, desiredVelocity);
+
+//    canX8pro.turnOffMotor(motor1ID);
 //    canX8pro.stopMotor(motor1ID);
 
     return 0;
@@ -70,8 +98,8 @@ void testPDcontrol(double Kp, double Kd, float desiredPosition, float desiredVel
         usleep(1000);
     }
     canX8pro.readEncoder(motor1ID);
-    int encoderValue = canX8pro.getEncoder();
-    std::cout<< "Encoder Value : " << encoderValue << std::endl;
+//    int encoderValue = canX8pro.getEncoder();
+//    std::cout<< "Encoder Value : " << encoderValue << std::endl;
     std::cout << "total iteration : " << iteration << std::endl;
 }
 

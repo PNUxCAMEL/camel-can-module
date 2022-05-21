@@ -23,9 +23,9 @@
           6. multiple motorId is needed
 */
 
-class CanMotorX8Pro {
+class CanMotorX8ProV2 {
 public:
-    CanMotorX8Pro(char *canName, std::string canName_temp, std::string bitRate) {
+    CanMotorX8ProV2(char *canName, std::string canName_temp, std::string bitRate) {
         std::string command3 =
                 "sudo ip link set " + canName_temp + " up type can bitrate " + bitRate; // TODO: should be modified.
         const char *c3 = command3.c_str();
@@ -33,9 +33,9 @@ public:
         initCanInterface(canName);
     }
 
-    float rad2deg = 180.0 / 3.141592;
-    float deg2rad = 3.141592 / 180.0;
-    float enc2rad = 2 * 3.141592 / 65535;
+    double rad2deg = 180.0 / 3.141592;
+    double deg2rad = 3.141592 / 180.0;
+    double enc2rad = 2 * 3.141592 / 65535;
 
     void initCanInterface(const char *CanName);
 
@@ -55,9 +55,9 @@ public:
 
     void readMotorStatus2(int motorID);
 
-    void setTorque(int Torque, int motorID);
+    void setTorque(int motorID ,double torque);
 
-    void setVelocity(int Velocity, int motorID);
+    void setVelocity(int motorID, int Velocity);
 
     void setPosition1(int motorID, double position);
 
@@ -65,18 +65,27 @@ public:
 
     can_frame getFrame() { return mFrame; }
 
-    float getAngularPosition() { return mAngularPosition_rad; }
+    double getAngularPosition() { return mAngularPosition_rad; }
 
-    float getAngularVelocity() { return mAngularVelocity_rad; }
+    double getAngularVelocity() { return mAngularVelocity_rad; }
 
     int getEncoder() { return mEncoder; }
+
+    int getEncoderRaw() {return mEncoderRaw; }
+
+    int getEncoderOffset() {return mEncoderOffset; }
 
 private:
     struct can_frame mFrame;
     const char *mCanName;
-    float mAngularPosition_rad;
-    float mAngularVelocity_rad;
-    int mEncoder;
+    double mAngularPosition_rad;
+    double mAngularVelocity_rad;
+    int mEncoder = 0;
+    int mEncoderMultiturnNum = 0;
+    int mEncoder_temp = 0;
+    int mEncoderPast = 0;
+    int mEncoderRaw;
+    int mEncoderOffset;
     int mSock;
     int mSendedCommand;
     int mGearRatio = 9;
@@ -84,8 +93,7 @@ private:
     u_int32_t mCanID;
 };
 
-//socket 생성
-void CanMotorX8Pro::initCanInterface(const char *ifname) {
+void CanMotorX8ProV2::initCanInterface(const char *ifname) {
     //CAN socket 생성
     mCanName = ifname;
     mSock = socket(PF_CAN, SOCK_RAW, CAN_RAW);
@@ -119,7 +127,7 @@ void CanMotorX8Pro::initCanInterface(const char *ifname) {
 }
 
 // Data 보내기
-void CanMotorX8Pro::canSend(const u_int8_t *data, int motorID) // TODO : motorId should be specified.
+void CanMotorX8ProV2::canSend(const u_int8_t *data, int motorID) // TODO : motorId should be specified.
 {
     u_int32_t tempid = motorID & 0x1fffffff;
     mFrame.can_id = tempid;
@@ -139,7 +147,7 @@ void CanMotorX8Pro::canSend(const u_int8_t *data, int motorID) // TODO : motorId
 }
 
 // Data 읽기
-void CanMotorX8Pro::canRead() {
+void CanMotorX8ProV2::canRead() {
     int rx_bytes = read(mSock, &mFrame, sizeof(mFrame));
     //feedback msg
     // TODO : Should be changed to better method.
@@ -189,36 +197,41 @@ void CanMotorX8Pro::canRead() {
 // 25. Write multiturn encoder current position to ROM as motor zero command (0x64)
 
 // 26. Read encoder data command (0x90)
-void CanMotorX8Pro::readEncoder(int motorID) {
-    /* 
-    1. encoder data 처리 필요
-    */
+void CanMotorX8ProV2::readEncoder(int motorID) {
     u_int8_t data[8] = {0X90, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(data, motorID);
     canRead();
 
-    /*
-    reply DATA[2] = Encoder position low byte
-    reply DATA[3] = Encoder position high byte
-    reply DATA[4] = Encoder original position low byte
-    reply DATA[5] = Encoder original position high byte
-    reply DATA[6] = Encoder offset low byte
-    reply DATA[7] = Encoder offset high byte
-    */
-    mEncoder = mFrame.data[2] + mFrame.data[3] * 256;
+    mEncoderPast = mEncoder_temp;
+    mEncoder_temp = mFrame.data[2] + mFrame.data[3] * 256;
+    mEncoderRaw = mFrame.data[4] + mFrame.data[5] * 256;
+    mEncoderOffset = mFrame.data[6] + mFrame.data[7] * 256;
+    if((mEncoder_temp < 10000) && (mEncoderPast > 50000))
+    {
+        mEncoderMultiturnNum += 1;
+    }
+    else if((mEncoder_temp > 50000) && (mEncoderPast < 10000))
+    {
+        mEncoderMultiturnNum -= 1;
+    }
+    else
+    {
+        mEncoder = mEncoder_temp + 65535 * mEncoderMultiturnNum;
+    }
+
 }
 
 // 27. Write encoder values to ROM as motor zero command (0x91)
 // 28. Write current position to ROM as motor zero command (0x19)
 // 29. Read multiturn turns angle command (0x92)
-void CanMotorX8Pro::readMultiturnAngularPosition(int motorID) {
+void CanMotorX8ProV2::readMultiturnAngularPosition(int motorID) {
     u_int8_t data[8] = {0X92, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(data, motorID);
     canRead();
-    float degree = (mFrame.data[1] + mFrame.data[2] * 256.0 + mFrame.data[3] * 256.0 * 256.0 +
-                    mFrame.data[4] * 256.0 * 256.0 * 256.0 +
-                    mFrame.data[5] * 256.0 * 256.0 * 256.0 * 256.0 +
-                    mFrame.data[6] * 256.0 * 256.0 * 256.0 * 256.0 * 256.0) * 0.01 / mGearRatio;
+    double degree = (mFrame.data[1] + mFrame.data[2] * 256.0 + mFrame.data[3] * 256.0 * 256.0 +
+                     mFrame.data[4] * 256.0 * 256.0 * 256.0 +
+                     mFrame.data[5] * 256.0 * 256.0 * 256.0 * 256.0 +
+                     mFrame.data[6] * 256.0 * 256.0 * 256.0 * 256.0 * 256.0) * 0.01 / mGearRatio;
     if (mFrame.data[7] == 1) {
         degree = -1.0 * degree;
     }
@@ -229,7 +242,7 @@ void CanMotorX8Pro::readMultiturnAngularPosition(int motorID) {
 // 30. Read single circle ange command (0x94)
 // 31. Read motor status 1 and error flag commands (0x9A)
 // 32. Read motor status 2 (0x9C)
-void CanMotorX8Pro::readMotorStatus2(int motorID) {
+void CanMotorX8ProV2::readMotorStatus2(int motorID) {
     u_int8_t data[8] = {0X9c, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(data, motorID);
     canRead();
@@ -245,19 +258,19 @@ void CanMotorX8Pro::readMotorStatus2(int motorID) {
 // 33. Read motor status 3 (0x9D)
 
 // 34. Motor off command (0x80)
-void CanMotorX8Pro::turnOffMotor(int motorID) {
+void CanMotorX8ProV2::turnOffMotor(int motorID) {
     u_int8_t data[8] = {0x80, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(data, motorID);
 }
 
 // 35. Motor stop command (0x81)
-void CanMotorX8Pro::stopMotor(int motorID) {
+void CanMotorX8ProV2::stopMotor(int motorID) {
     u_int8_t data[8] = {0x81, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(data, motorID);
 }
 
 // 36. Motor running command (0x88)
-void CanMotorX8Pro::turnOnMotor(int motorID) {
+void CanMotorX8ProV2::turnOnMotor(int motorID) {
     u_int8_t data[8] = {0x88, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(data, motorID);
     sleep(5);
@@ -266,23 +279,24 @@ void CanMotorX8Pro::turnOnMotor(int motorID) {
 
 // 37. Torque closed-loop command (0xA1)
 // torque_int : 0 ~ 4096 which matches to (-32A ~ 32A)
-void CanMotorX8Pro::setTorque(int motorID, int torque_int) {
-    int temp = torque_int;
+void CanMotorX8ProV2::setTorque(int motorID, double torque) {
+    int torque_int = round((torque - 0.05466845454545443) / 0.03936824733201581);
+//    std::cout<<"torque_int"<<torque_int<<std::endl;
 
     if (torque_int < 0) {
-        temp += +2 * pow(2, 15);
+        torque_int += +2 * pow(2, 15);
     }
 
-    u_int8_t torqueLowerData = temp % 256;
-    temp = temp / 256;
-    u_int8_t torqueUpperData = temp % 256;
+    u_int8_t torqueLowerData = torque_int % 256;
+    torque_int = torque_int / 256;
+    u_int8_t torqueUpperData = torque_int % 256;
     u_int8_t data[8] = {0Xa1, 0X00, 0X00, 0X00, torqueLowerData, torqueUpperData, 0X00, 0X00};
     canSend(data, motorID);
     canRead();
 }
 
 // 38. Speed closed-loop command (0xA2)
-void CanMotorX8Pro::setVelocity(int motorID, int velocity) {
+void CanMotorX8ProV2::setVelocity(int motorID, int velocity) {
     //0.01dps/LSB
     u_int8_t data[8] = {0Xa2, 0X00, 0X00, 0X00, 0x00, velocity, 0X00, 0X00};
     canSend(data, motorID);
@@ -290,7 +304,7 @@ void CanMotorX8Pro::setVelocity(int motorID, int velocity) {
 }
 
 // 39. Position closed-loop command 1 (0xA3)
-void CanMotorX8Pro::setPosition1(int motorID, double desiredPosition_rad) {
+void CanMotorX8ProV2::setPosition1(int motorID, double desiredPosition_rad) {
     //0.01rad/LSB
 
     double position_Deg = desiredPosition_rad * rad2deg * 100 * mGearRatio;

@@ -1,1 +1,0 @@
-/usr/bin/g++ -g CMakeFiles/test_animation.dir/matplotlib-cpp/examples/animation.cpp.o -o test_animation 
