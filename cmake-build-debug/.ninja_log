@@ -9,3 +9,5 @@
 244	301	1653135015533594658	rmd_x8_pro_encoder_offset_calibration	b698611b3247514f
 1	235	1653135102862638469	CMakeFiles/rmd_x8_pro_encoder_offset_calibration.dir/RMDX8EncoderOffsetCalibration.cpp.o	bbaf6710d76b3eed
 236	284	1653135102910639044	rmd_x8_pro_encoder_offset_calibration	b698611b3247514f
+0	276	1653136121896702686	CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o	72a467af7250e63b
+276	328	1653136121948703127	test_motor_x8_pro	23c365d2c397daf7

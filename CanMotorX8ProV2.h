@@ -85,7 +85,6 @@ void CanMotorX8ProV2::initCanInterface(const char *ifname) {
     //CAN socket 생성
     mCanName = ifname;
     mSock = socket(PF_CAN, SOCK_RAW, CAN_RAW);
-    std::cout << mSock << std::endl;
     if (mSock == -1) {
         printf("Fail to create can socket for %s - %m \n", mCanName);
         return;
@@ -268,7 +267,6 @@ void CanMotorX8ProV2::setTorque(int motorID, double torque) {
     u_int8_t data[8] = {0Xa1, 0X00, 0X00, 0X00, torqueLowerData, torqueUpperData, 0X00, 0X00};
     canSend(data, motorID);
     canRead();
-    std::cout << mEncoderMultiturnNum << std::endl;
     mAngularVelocity_rad = (mFrame.data[4] + mFrame.data[5] * 256) * deg2rad;
 
     mEncoderPast = mEncoder_temp;
