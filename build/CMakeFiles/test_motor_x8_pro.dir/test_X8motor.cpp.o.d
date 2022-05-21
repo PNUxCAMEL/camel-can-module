@@ -1,7 +1,7 @@
 CMakeFiles/test_motor_x8_pro.dir/test_X8motor.cpp.o: \
  /home/jaehoon/git/repository-group/camel-can-module/test_X8motor.cpp \
  /usr/include/stdc-predef.h \
- /home/jaehoon/git/repository-group/camel-can-module/CanMotorX8Pro.h \
+ /home/jaehoon/git/repository-group/camel-can-module/CanMotorX8ProV2.h \
  /usr/include/c++/7/iostream \
  /usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/7/bits/os_defines.h \

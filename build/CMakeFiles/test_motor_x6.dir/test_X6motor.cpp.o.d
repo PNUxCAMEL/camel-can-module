@@ -1,7 +1,7 @@
 CMakeFiles/test_motor_x6.dir/test_X6motor.cpp.o: \
  /home/jaehoon/git/repository-group/camel-can-module/test_X6motor.cpp \
  /usr/include/stdc-predef.h \
- /home/jaehoon/git/repository-group/camel-can-module/CanMotorX6.h \
+ /home/jaehoon/git/repository-group/camel-can-module/CanMotorX6_Hwayoung.h \
  /usr/include/c++/7/iostream \
  /usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/7/bits/os_defines.h \
@@ -176,6 +176,7 @@ CMakeFiles/test_motor_x6.dir/test_X6motor.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+ /home/jaehoon/git/repository-group/camel-can-module/CanMotorX8ProV2.h \
  /usr/include/c++/7/chrono /usr/include/c++/7/ratio \
  /usr/include/c++/7/limits /usr/include/c++/7/ctime \
  /usr/include/c++/7/bits/parse_numbers.h
