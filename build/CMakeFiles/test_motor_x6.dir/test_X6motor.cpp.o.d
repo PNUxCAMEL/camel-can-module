@@ -1,6 +1,7 @@
 CMakeFiles/test_motor_x6.dir/test_X6motor.cpp.o: \
- /home/jaehyung/camel-can-module/test_X6motor.cpp \
- /usr/include/stdc-predef.h /home/jaehyung/camel-can-module/CanMotorX6.h \
+ /home/jaehoon/git/repository-group/camel-can-module/test_X6motor.cpp \
+ /usr/include/stdc-predef.h \
+ /home/jaehoon/git/repository-group/camel-can-module/CanMotorX6.h \
  /usr/include/c++/7/iostream \
  /usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/7/bits/os_defines.h \
