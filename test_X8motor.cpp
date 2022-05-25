@@ -7,27 +7,36 @@ std::string bitRate = "1000000";
 char *canName = "can0";
 CanMotorX8ProV2 canX8pro(canName, canName_temp, bitRate);
 int motor1ID = 0x141;
+int motor2ID = 0x142;
 double motor1AngularPosition = 0;
 double motor1AngularVelocity = 0;
+double motor2AngularPosition = 0;
+double motor2AngularVelocity = 0;
 double torque = 0;
+double torque1 = 0;
+double torque2 = 0;
 double torqueLimit = 5;
 
 int main() {
     if (canX8pro.getSock() < 0) { return -1; }
     int iteration = 0;
     canX8pro.turnOnMotor(motor1ID);
+    canX8pro.turnOnMotor(motor2ID);
 
 
     while (true) {
         iteration++;
         canX8pro.setTorque(motor1ID, 0.0);
-        std::cout << "Angular position[deg] : " << canX8pro.getAngularPosition() * canX8pro.rad2deg << std::endl;
+        std::cout << "Angular position 1[deg] : " << canX8pro.getAngularPosition() * canX8pro.rad2deg << std::endl;
+        canX8pro.setTorque(motor2ID, 0.0);
+        std::cout << "Angular position 2[deg] : " << canX8pro.getAngularPosition() * canX8pro.rad2deg << std::endl;
         usleep(1000);
-        if (iteration == 5000) {
+        if (iteration == 50000) {
             break;
         }
     }
     canX8pro.turnOffMotor(motor1ID);
+    canX8pro.turnOffMotor(motor2ID);
 
 
 //    canX8pro.turnOnMotor(motor1ID);

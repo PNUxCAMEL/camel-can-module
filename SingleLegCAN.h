@@ -23,9 +23,9 @@
           6. multiple motorId is needed
 */
 
-class CanMotorX8ProV2 {
+class SingleLegCAN {
 public:
-    CanMotorX8ProV2(char *canName, std::string canName_temp, std::string bitRate) {
+    SingleLegCAN(char *canName, std::string canName_temp, std::string bitRate) {
         std::string command3 =
                 "sudo ip link set " + canName_temp + " up type can bitrate " + bitRate; // TODO: should be modified.
         const char *c3 = command3.c_str();
@@ -56,24 +56,37 @@ public:
     void setPosition1(int motorID, double position);
 
     int getSock() { return mSock; }
-    int getEncoder() { return mEncoder; }
-    int getEncoderRaw() { return mEncoderRaw; }
-    int getEncoderOffset() { return mEncoderOffset; }
-    double getAngularPosition() { return mAngularPosition_rad; }
-    double getAngularVelocity() { return mAngularVelocity_rad; }
+    int getEncoder1() { return mEncoder1; }
+    int getEncoder2() { return mEncoder2; }
+    int getEncoderRaw1() { return mEncoderRaw1; }
+    int getEncoderRaw2() { return mEncoderRaw2; }
+    int getEncoderOffset1() { return mEncoderOffset1; }
+    int getEncoderOffset2() { return mEncoderOffset2; }
+    double getAngularPosition1() { return mAngularPosition_rad1; }
+    double getAngularPosition2() { return mAngularPosition_rad2; }
+    double getAngularVelocity1() { return mAngularVelocity_rad1; }
+    double getAngularVelocity2() { return mAngularVelocity_rad2; }
     can_frame getFrame() { return mFrame; }
 
 private:
     struct can_frame mFrame;
     const char *mCanName;
-    double mAngularPosition_rad = 0;
-    double mAngularVelocity_rad = 0;
-    int mEncoder = 0;
-    int mEncoderMultiturnNum = 0;
-    int mEncoder_temp = 35000;
-    int mEncoderPast = 35000;
-    int mEncoderRaw;
-    int mEncoderOffset;
+    double mAngularPosition_rad1 = 0;
+    double mAngularVelocity_rad1 = 0;
+    double mAngularPosition_rad2 = 0;
+    double mAngularVelocity_rad2 = 0;
+    int mEncoder1 = 0;
+    int mEncoder2 = 0;
+    int mEncoderMultiturnNum1 = 0;
+    int mEncoderMultiturnNum2 = 0;
+    int mEncoder_temp1 = 35000;
+    int mEncoder_temp2 = 35000;
+    int mEncoderPast1 = 35000;
+    int mEncoderPast2 = 35000;
+    int mEncoderRaw1;
+    int mEncoderRaw2;
+    int mEncoderOffset1;
+    int mEncoderOffset2;
     int mSock;
     int mSendedCommand;
     int mGearRatio = 9;
@@ -81,7 +94,7 @@ private:
     u_int32_t mCanID;
 };
 
-void CanMotorX8ProV2::initCanInterface(const char *ifname) {
+void SingleLegCAN::initCanInterface(const char *ifname) {
     //CAN socket 생성
     mCanName = ifname;
     mSock = socket(PF_CAN, SOCK_RAW, CAN_RAW);
@@ -113,7 +126,7 @@ void CanMotorX8ProV2::initCanInterface(const char *ifname) {
     printf("Success to bind can socket\n");
 }
 
-void CanMotorX8ProV2::canSend(const u_int8_t *data, int motorID) // TODO : motorId should be specified.
+void SingleLegCAN::canSend(const u_int8_t *data, int motorID) // TODO : motorId should be specified.
 {
     u_int32_t tempid = motorID & 0x1fffffff;
     mFrame.can_id = tempid;
@@ -128,7 +141,7 @@ void CanMotorX8ProV2::canSend(const u_int8_t *data, int motorID) // TODO : motor
     mSendedCommand = mFrame.data[0];
 }
 
-void CanMotorX8ProV2::canRead() {
+void SingleLegCAN::canRead() {
     int rx_bytes = read(mSock, &mFrame, sizeof(mFrame));
     // TODO : Should be changed to better method.
     int iteration = 0;
@@ -142,7 +155,7 @@ void CanMotorX8ProV2::canRead() {
     }
 }
 
-void CanMotorX8ProV2::optionSetMotorOffsetToCurrentPosition(int motorID){
+void SingleLegCAN::optionSetMotorOffsetToCurrentPosition(int motorID){
     u_int8_t data[8] = {0X19, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(data, motorID);
 }
@@ -174,23 +187,41 @@ void CanMotorX8ProV2::optionSetMotorOffsetToCurrentPosition(int motorID){
 // 25. Write multiturn encoder current position to ROM as motor zero command (0x64)
 
 // 26. Read encoder data command (0x90)
-void CanMotorX8ProV2::readEncoder(int motorID) {
+void SingleLegCAN::readEncoder(int motorID) {
     u_int8_t data[8] = {0X90, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(data, motorID);
     canRead();
-
-    mEncoderPast = mEncoder_temp;
-    mEncoder_temp = mFrame.data[2] + mFrame.data[3] * 256;
-    mEncoderRaw = mFrame.data[4] + mFrame.data[5] * 256;
-    mEncoderOffset = mFrame.data[6] + mFrame.data[7] * 256;
-    if ((mEncoder_temp < 10000) && (mEncoderPast > 50000)) {
-        mEncoderMultiturnNum += 1;
-    } else if ((mEncoder_temp > 50000) && (mEncoderPast < 10000)) {
-        mEncoderMultiturnNum -= 1;
-    } else {
-        mEncoder = mEncoder_temp + 65535 * mEncoderMultiturnNum;
-        mAngularPosition_rad = mEncoder * enc2rad / mGearRatio;
+    if(motorID == 0x141)
+    {
+        mEncoderPast1 = mEncoder_temp1;
+        mEncoder_temp1 = mFrame.data[2] + mFrame.data[3] * 256;
+        mEncoderRaw1 = mFrame.data[4] + mFrame.data[5] * 256;
+        mEncoderOffset1 = mFrame.data[6] + mFrame.data[7] * 256;
+        if ((mEncoder_temp1 < 10000) && (mEncoderPast1 > 50000)) {
+            mEncoderMultiturnNum1 += 1;
+        } else if ((mEncoder_temp1 > 50000) && (mEncoderPast1 < 10000)) {
+            mEncoderMultiturnNum1 -= 1;
+        } else {
+            mEncoder1 = mEncoder_temp1 + 65535 * mEncoderMultiturnNum1;
+            mAngularPosition_rad1 = mEncoder1 * enc2rad / mGearRatio;
+        }
     }
+    else if(motorID == 0x142)
+    {
+        mEncoderPast2 = mEncoder_temp2;
+        mEncoder_temp2 = mFrame.data[2] + mFrame.data[3] * 256;
+        mEncoderRaw2 = mFrame.data[4] + mFrame.data[5] * 256;
+        mEncoderOffset2 = mFrame.data[6] + mFrame.data[7] * 256;
+        if ((mEncoder_temp2 < 10000) && (mEncoderPast2 > 50000)) {
+            mEncoderMultiturnNum2 += 1;
+        } else if ((mEncoder_temp2 > 50000) && (mEncoderPast2 < 10000)) {
+            mEncoderMultiturnNum2 -= 1;
+        } else {
+            mEncoder2 = mEncoder_temp2 + 65535 * mEncoderMultiturnNum2;
+            mAngularPosition_rad2 = mEncoder2 * enc2rad / mGearRatio;
+        }
+    }
+
 
 }
 
@@ -198,7 +229,7 @@ void CanMotorX8ProV2::readEncoder(int motorID) {
 // 28. Write current position to ROM as motor zero command (0x19)
 
 // 29. Read multiturn turns angle command (0x92)
-void CanMotorX8ProV2::readMultiturnAngularPosition(int motorID) {
+void SingleLegCAN::readMultiturnAngularPosition(int motorID) {
     u_int8_t data[8] = {0X92, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(data, motorID);
     canRead();
@@ -209,43 +240,62 @@ void CanMotorX8ProV2::readMultiturnAngularPosition(int motorID) {
     if (mFrame.data[7] == 1) {
         degree = -1.0 * degree;
     }
+    if(motorID == 0x141)
+    {
+        mAngularPosition_rad1 = degree * deg2rad;
+    }
+    else if(motorID == 0x142)
+    {
+        mAngularPosition_rad2 = degree * deg2rad;
+    }
 
-    mAngularPosition_rad = degree * deg2rad;
+
 }
 
 // 30. Read single circle ange command (0x94)
 // 31. Read motor status 1 and error flag commands (0x9A)
 
 // 32. Read motor status 2 (0x9C)
-void CanMotorX8ProV2::readMotorStatus2(int motorID) {
+void SingleLegCAN::readMotorStatus2(int motorID) {
     u_int8_t data[8] = {0X9c, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(data, motorID);
     canRead();
-    mAngularPosition_rad = (mFrame.data[6] + mFrame.data[7] * 256) * enc2rad;
-
-    mAngularVelocity_rad = mFrame.data[4] + mFrame.data[5] * 256;
-
-    if (mFrame.data[5] > 127) {
-        mAngularVelocity_rad -= 256 * 256;
+    if(motorID == 0x141)
+    {
+        mAngularPosition_rad1 = (mFrame.data[6] + mFrame.data[7] * 256) * enc2rad;
+        mAngularVelocity_rad1 = mFrame.data[4] + mFrame.data[5] * 256;
+        if (mFrame.data[5] > 127) {
+            mAngularVelocity_rad1 -= 256 * 256;
+        }
+        mAngularVelocity_rad1 = mAngularVelocity_rad1 * deg2rad / mGearRatio;
     }
-    mAngularVelocity_rad = mAngularVelocity_rad * deg2rad / mGearRatio;
+    else if(motorID == 0x142)
+    {
+        mAngularPosition_rad2 = (mFrame.data[6] + mFrame.data[7] * 256) * enc2rad;
+        mAngularVelocity_rad2 = mFrame.data[4] + mFrame.data[5] * 256;
+        if (mFrame.data[5] > 127) {
+            mAngularVelocity_rad2 -= 256 * 256;
+        }
+        mAngularVelocity_rad2 = mAngularVelocity_rad2 * deg2rad / mGearRatio;
+    }
+
 }
 // 33. Read motor status 3 (0x9D)
 
 // 34. Motor off command (0x80)
-void CanMotorX8ProV2::turnOffMotor(int motorID) {
+void SingleLegCAN::turnOffMotor(int motorID) {
     u_int8_t data[8] = {0x80, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(data, motorID);
 }
 
 // 35. Motor stop command (0x81)
-void CanMotorX8ProV2::stopMotor(int motorID) {
+void SingleLegCAN::stopMotor(int motorID) {
     u_int8_t data[8] = {0x81, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(data, motorID);
 }
 
 // 36. Motor running command (0x88)
-void CanMotorX8ProV2::turnOnMotor(int motorID) {
+void SingleLegCAN::turnOnMotor(int motorID) {
     u_int8_t data[8] = {0x88, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
     canSend(data, motorID);
     sleep(5);
@@ -254,7 +304,7 @@ void CanMotorX8ProV2::turnOnMotor(int motorID) {
 
 // 37. Torque closed-loop command (0xA1)
 // torque_int : 0 ~ 4096 which matches to (-32A ~ 32A)
-void CanMotorX8ProV2::setTorque(int motorID, double torque) {
+void SingleLegCAN::setTorque(int motorID, double torque) {
     int torque_int = round((torque - 0.05466845454545443) / 0.03936824733201581);
     if (torque_int < 0) {
         torque_int += +2 * pow(2, 15);
@@ -266,29 +316,48 @@ void CanMotorX8ProV2::setTorque(int motorID, double torque) {
     u_int8_t data[8] = {0Xa1, 0X00, 0X00, 0X00, torqueLowerData, torqueUpperData, 0X00, 0X00};
     canSend(data, motorID);
     canRead();
-    mAngularVelocity_rad = (mFrame.data[4] + mFrame.data[5] * 256) * deg2rad;
 
-    mEncoderPast = mEncoder_temp;
-    mEncoder_temp = mFrame.data[6] + mFrame.data[7] * 256;
-    if ((mEncoder_temp < 10000) && (mEncoderPast > 50000)) {
-        mEncoderMultiturnNum += 1;
-    } else if ((mEncoder_temp > 50000) && (mEncoderPast < 10000)) {
-        mEncoderMultiturnNum -= 1;
-    } else {
-        mEncoder = mEncoder_temp + 65535 * mEncoderMultiturnNum;
-        mAngularPosition_rad = mEncoder * enc2rad / mGearRatio;
+    if(motorID == 0x141)
+    {
+        mAngularVelocity_rad1 = (mFrame.data[4] + mFrame.data[5] * 256) * deg2rad;
+
+        mEncoderPast1 = mEncoder_temp1;
+        mEncoder_temp1 = mFrame.data[6] + mFrame.data[7] * 256;
+        if ((mEncoder_temp1 < 10000) && (mEncoderPast1 > 50000)) {
+            mEncoderMultiturnNum1 += 1;
+        } else if ((mEncoder_temp1 > 50000) && (mEncoderPast1 < 10000)) {
+            mEncoderMultiturnNum1 -= 1;
+        } else {
+            mEncoder1 = mEncoder_temp1 + 65535 * mEncoderMultiturnNum1;
+            mAngularPosition_rad1 = mEncoder1 * enc2rad / mGearRatio;
+        }
+    }
+    else if(motorID == 0x142)
+    {
+        mAngularVelocity_rad2 = (mFrame.data[4] + mFrame.data[5] * 256) * deg2rad;
+
+        mEncoderPast2 = mEncoder_temp2;
+        mEncoder_temp2 = mFrame.data[6] + mFrame.data[7] * 256;
+        if ((mEncoder_temp2 < 10000) && (mEncoderPast2 > 50000)) {
+            mEncoderMultiturnNum2 += 1;
+        } else if ((mEncoder_temp2 > 50000) && (mEncoderPast2 < 10000)) {
+            mEncoderMultiturnNum2 -= 1;
+        } else {
+            mEncoder2 = mEncoder_temp2 + 65535 * mEncoderMultiturnNum2;
+            mAngularPosition_rad2 = mEncoder2 * enc2rad / mGearRatio;
+        }
     }
 }
 
 // 38. Speed closed-loop command (0xA2)
-void CanMotorX8ProV2::setVelocity(int motorID, int velocity) {
+void SingleLegCAN::setVelocity(int motorID, int velocity) {
     //0.01dps/LSB
     u_int8_t data[8] = {0Xa2, 0X00, 0X00, 0X00, 0x00, velocity, 0X00, 0X00};
     canSend(data, motorID);
 }
 
 // 39. Position closed-loop command 1 (0xA3)
-void CanMotorX8ProV2::setPosition1(int motorID, double desiredPosition_rad) {
+void SingleLegCAN::setPosition1(int motorID, double desiredPosition_rad) {
     double position_Deg = desiredPosition_rad * rad2deg * 100 * mGearRatio;
     int position_int = (int) round(position_Deg);
 

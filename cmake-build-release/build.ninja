@@ -164,6 +164,37 @@ build rmd_x8_pro_encoder_offset_calibration: CXX_EXECUTABLE_LINKER__rmd_x8_pro_e
   TARGET_FILE = rmd_x8_pro_encoder_offset_calibration
   TARGET_PDB = rmd_x8_pro_encoder_offset_calibration.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target test_single_leg
+
+
+#############################################
+# Order-only phony target for test_single_leg
+
+build cmake_object_order_depends_target_test_single_leg: phony || CMakeFiles/test_single_leg.dir
+
+build CMakeFiles/test_single_leg.dir/test_singleLeg.cpp.o: CXX_COMPILER__test_single_leg_Release /home/jaehoon/git/repository-group/camel-can-module/test_singleLeg.cpp || cmake_object_order_depends_target_test_single_leg
+  DEP_FILE = CMakeFiles/test_single_leg.dir/test_singleLeg.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++14
+  OBJECT_DIR = CMakeFiles/test_single_leg.dir
+  OBJECT_FILE_DIR = CMakeFiles/test_single_leg.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test_single_leg
+
+
+#############################################
+# Link the executable test_single_leg
+
+build test_single_leg: CXX_EXECUTABLE_LINKER__test_single_leg_Release CMakeFiles/test_single_leg.dir/test_singleLeg.cpp.o
+  FLAGS = -O3 -DNDEBUG
+  OBJECT_DIR = CMakeFiles/test_single_leg.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = test_single_leg
+  TARGET_PDB = test_single_leg.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -199,7 +230,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /home/jaehoon/git/repository-group/camel-can-module/cmake-build-release
 
-build all: phony test_basic_cpp test_motor_x8_pro test_motor_x6 rmd_x8_pro_encoder_offset_calibration
+build all: phony test_basic_cpp test_motor_x8_pro test_motor_x6 rmd_x8_pro_encoder_offset_calibration test_single_leg
 
 # =============================================================================
 # Built-in targets

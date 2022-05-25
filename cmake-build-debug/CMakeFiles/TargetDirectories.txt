@@ -2,5 +2,6 @@
 /home/jaehoon/git/repository-group/camel-can-module/cmake-build-debug/CMakeFiles/test_motor_x8_pro.dir
 /home/jaehoon/git/repository-group/camel-can-module/cmake-build-debug/CMakeFiles/test_motor_x6.dir
 /home/jaehoon/git/repository-group/camel-can-module/cmake-build-debug/CMakeFiles/rmd_x8_pro_encoder_offset_calibration.dir
+/home/jaehoon/git/repository-group/camel-can-module/cmake-build-debug/CMakeFiles/test_single_leg.dir
 /home/jaehoon/git/repository-group/camel-can-module/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/jaehoon/git/repository-group/camel-can-module/cmake-build-debug/CMakeFiles/rebuild_cache.dir

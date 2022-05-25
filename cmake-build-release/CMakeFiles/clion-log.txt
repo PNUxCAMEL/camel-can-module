@@ -1,4 +1,4 @@
-/snap/clion/190/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_MAKE_PROGRAM=/snap/clion/190/bin/ninja/linux/ninja -G Ninja -S /home/jaehoon/git/repository-group/camel-can-module -B /home/jaehoon/git/repository-group/camel-can-module/cmake-build-release
+/snap/clion/190/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_MAKE_PROGRAM=/snap/clion/190/bin/ninja/linux/ninja -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -G Ninja -S /home/jaehoon/git/repository-group/camel-can-module -B /home/jaehoon/git/repository-group/camel-can-module/cmake-build-release
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/jaehoon/git/repository-group/camel-can-module/cmake-build-release
