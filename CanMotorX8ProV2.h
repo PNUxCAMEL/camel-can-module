@@ -52,6 +52,7 @@ public:
     void turnOffMotor(int motorID);
 
     void setTorque(int motorID, double torque);
+    void setTorqueCurrent(int motorID, int torque_int);
     void setVelocity(int motorID, int Velocity);
     void setPosition1(int motorID, double position);
 
@@ -255,7 +256,11 @@ void CanMotorX8ProV2::turnOnMotor(int motorID) {
 // 37. Torque closed-loop command (0xA1)
 // torque_int : 0 ~ 4096 which matches to (-32A ~ 32A)
 void CanMotorX8ProV2::setTorque(int motorID, double torque) {
-    int torque_int = round((torque - 0.05466845454545443) / 0.03936824733201581);
+// previous torque to current method
+//    int torque_int = round((torque - 0.05466845454545443) / 0.03936824733201581);
+
+// improved torque to current method
+    int torque_int = round(24.5737034 * torque + 2.450790188);
     if (torque_int < 0) {
         torque_int += +2 * pow(2, 15);
     }
@@ -263,6 +268,34 @@ void CanMotorX8ProV2::setTorque(int motorID, double torque) {
     u_int8_t torqueLowerData = torque_int % 256;
     torque_int = torque_int / 256;
     u_int8_t torqueUpperData = torque_int % 256;
+    u_int8_t data[8] = {0Xa1, 0X00, 0X00, 0X00, torqueLowerData, torqueUpperData, 0X00, 0X00};
+    canSend(data, motorID);
+    canRead();
+    mAngularVelocity_rad = (mFrame.data[4] + mFrame.data[5] * 256) * deg2rad;
+
+    mEncoderPast = mEncoder_temp;
+    mEncoder_temp = mFrame.data[6] + mFrame.data[7] * 256;
+    if ((mEncoder_temp < 10000) && (mEncoderPast > 50000)) {
+        mEncoderMultiturnNum += 1;
+    } else if ((mEncoder_temp > 50000) && (mEncoderPast < 10000)) {
+        mEncoderMultiturnNum -= 1;
+    } else {
+        mEncoder = mEncoder_temp + 65535 * mEncoderMultiturnNum;
+        mAngularPosition_rad = mEncoder * enc2rad / mGearRatio;
+    }
+}
+
+void CanMotorX8ProV2::setTorqueCurrent(int motorID, int torque_int) {
+    int temp = torque_int;
+
+    if(torque_int < 0)
+    {
+        temp += + 2 * pow(2,15);
+    }
+
+    u_int8_t torqueLowerData = temp % 256;
+    temp = temp/256;
+    u_int8_t torqueUpperData = temp % 256;
     u_int8_t data[8] = {0Xa1, 0X00, 0X00, 0X00, torqueLowerData, torqueUpperData, 0X00, 0X00};
     canSend(data, motorID);
     canRead();
