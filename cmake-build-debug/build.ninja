@@ -148,6 +148,12 @@ build CMakeFiles/rmd_x8_pro_encoder_offset_calibration.dir/RMDX8EncoderOffsetCal
   OBJECT_DIR = CMakeFiles/rmd_x8_pro_encoder_offset_calibration.dir
   OBJECT_FILE_DIR = CMakeFiles/rmd_x8_pro_encoder_offset_calibration.dir
 
+build CMakeFiles/rmd_x8_pro_encoder_offset_calibration.dir/RMDX8MotorIDSetting.cpp.o: CXX_COMPILER__rmd_x8_pro_encoder_offset_calibration_Debug /home/jaehoon/git/repository-group/camel-can-module/RMDX8MotorIDSetting.cpp || cmake_object_order_depends_target_rmd_x8_pro_encoder_offset_calibration
+  DEP_FILE = CMakeFiles/rmd_x8_pro_encoder_offset_calibration.dir/RMDX8MotorIDSetting.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/rmd_x8_pro_encoder_offset_calibration.dir
+  OBJECT_FILE_DIR = CMakeFiles/rmd_x8_pro_encoder_offset_calibration.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target rmd_x8_pro_encoder_offset_calibration
@@ -156,7 +162,7 @@ build CMakeFiles/rmd_x8_pro_encoder_offset_calibration.dir/RMDX8EncoderOffsetCal
 #############################################
 # Link the executable rmd_x8_pro_encoder_offset_calibration
 
-build rmd_x8_pro_encoder_offset_calibration: CXX_EXECUTABLE_LINKER__rmd_x8_pro_encoder_offset_calibration_Debug CMakeFiles/rmd_x8_pro_encoder_offset_calibration.dir/RMDX8EncoderOffsetCalibration.cpp.o
+build rmd_x8_pro_encoder_offset_calibration: CXX_EXECUTABLE_LINKER__rmd_x8_pro_encoder_offset_calibration_Debug CMakeFiles/rmd_x8_pro_encoder_offset_calibration.dir/RMDX8EncoderOffsetCalibration.cpp.o CMakeFiles/rmd_x8_pro_encoder_offset_calibration.dir/RMDX8MotorIDSetting.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/rmd_x8_pro_encoder_offset_calibration.dir
   POST_BUILD = :
@@ -195,6 +201,37 @@ build test_single_leg: CXX_EXECUTABLE_LINKER__test_single_leg_Debug CMakeFiles/t
   TARGET_FILE = test_single_leg
   TARGET_PDB = test_single_leg.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target rmd_x8_pro_motorID_setting
+
+
+#############################################
+# Order-only phony target for rmd_x8_pro_motorID_setting
+
+build cmake_object_order_depends_target_rmd_x8_pro_motorID_setting: phony || CMakeFiles/rmd_x8_pro_motorID_setting.dir
+
+build CMakeFiles/rmd_x8_pro_motorID_setting.dir/RMDX8MotorIDSetting.cpp.o: CXX_COMPILER__rmd_x8_pro_motorID_setting_Debug /home/jaehoon/git/repository-group/camel-can-module/RMDX8MotorIDSetting.cpp || cmake_object_order_depends_target_rmd_x8_pro_motorID_setting
+  DEP_FILE = CMakeFiles/rmd_x8_pro_motorID_setting.dir/RMDX8MotorIDSetting.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/rmd_x8_pro_motorID_setting.dir
+  OBJECT_FILE_DIR = CMakeFiles/rmd_x8_pro_motorID_setting.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target rmd_x8_pro_motorID_setting
+
+
+#############################################
+# Link the executable rmd_x8_pro_motorID_setting
+
+build rmd_x8_pro_motorID_setting: CXX_EXECUTABLE_LINKER__rmd_x8_pro_motorID_setting_Debug CMakeFiles/rmd_x8_pro_motorID_setting.dir/RMDX8MotorIDSetting.cpp.o
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/rmd_x8_pro_motorID_setting.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = rmd_x8_pro_motorID_setting
+  TARGET_PDB = rmd_x8_pro_motorID_setting.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -230,7 +267,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /home/jaehoon/git/repository-group/camel-can-module/cmake-build-debug
 
-build all: phony test_basic_cpp test_motor_x8_pro test_motor_x6 rmd_x8_pro_encoder_offset_calibration test_single_leg
+build all: phony test_basic_cpp test_motor_x8_pro test_motor_x6 rmd_x8_pro_encoder_offset_calibration test_single_leg rmd_x8_pro_motorID_setting
 
 # =============================================================================
 # Built-in targets

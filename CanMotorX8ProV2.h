@@ -55,7 +55,7 @@ public:
     void setTorqueCurrent(int motorID, int torque_int);
     void setVelocity(int motorID, int Velocity);
     void setPosition1(int motorID, double position);
-
+    void setMotorID(int motorID, u_int8_t setMotorID);
     int getSock() { return mSock; }
     int getEncoder() { return mEncoder; }
     int getEncoderRaw() { return mEncoderRaw; }
@@ -356,4 +356,8 @@ void CanMotorX8ProV2::setPosition1(int motorID, double desiredPosition_rad) {
 // 50. Brake opening command (0x77)
 // 51. Brake close command (0x78)
 // 52. CAN ID setting and reading (0x79)
-
+void CanMotorX8ProV2::setMotorID(int motorID, u_int8_t setMotorID) {
+    u_int8_t data[8] = {0X79, 0X00, 0X00, 0X00, setMotorID, 00, 00, 00};
+    canSend(data, motorID);
+    canRead();
+}
